@@ -1,5 +1,4 @@
 #include <iostream>
-#include <sstream>
 #include <iomanip>
 #include <conio.h>
 #include <clocale>
@@ -26,6 +25,7 @@ int main()
         cout << "Отриманий результат: " << s_calculation(valueX[i], valueY[i], valueZ[i]) << endl;
         cout << endl << endl;
     }
+    _getch();
 
     return 0;
 }
