@@ -21,7 +21,7 @@ void inputVariables(int X, int Y, int Z, char A, char B)
 
 void authorCopyright()
 {
-    cout << endl << "© Стрюк Владислав Євгенійович" << endl << endl;
+    cout << "© Стрюк Владислав Євгенійович" << endl << endl;
 }
 
 void logicalExpression(int X, int Y)
@@ -32,25 +32,25 @@ void logicalExpression(int X, int Y)
 
 void decimalHexNumbersOutput(int X, int Y, int Z)
 {
-    cout << "'x' в десятковій: " << dec << X << endl;
-    cout << "'y' в десятковій: " << dec << Y << endl;
-    cout << "'z' в десятковій: " << dec << Z << endl << endl;
+    cout << "'x' в десятковій: " << dec << X << endl
+         << "'y' в десятковій: " << dec << Y << endl
+         << "'z' в десятковій: " << dec << Z << endl << endl;
 
-    cout << "'x' в шістнацятковій: " << hex << X << endl;
-    cout << "'y' в шістнацятковій: " << hex << Y << endl;
-    cout << "'z' в шістнацятковій: " << hex << Z << endl;
+    cout << "'x' в шістнацятковій: " << hex << X << endl
+         << "'y' в шістнацятковій: " << hex << Y << endl
+         << "'z' в шістнацятковій: " << hex << Z << endl;
 }
 
 int main()
 {
-    system("chcp 65001");
+    system("chcp 65001 & cls");
+    authorCopyright();
 
     inputVariables(x, y, z, a, b);
-    authorCopyright();
     logicalExpression(x, y);
     decimalHexNumbersOutput(x, y, z);
 
-    cout << "Результат виразу: " << s_calculation(x, y, z);
+    cout << endl << "Результат виразу: " << s_calculation(x, y, z);
     _getch();
 
     return 0;

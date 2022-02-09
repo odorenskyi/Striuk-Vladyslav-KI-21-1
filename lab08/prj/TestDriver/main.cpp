@@ -1,7 +1,7 @@
 #include <iostream>
-#include <iomanip>
 #include <conio.h>
 #include <clocale>
+
 #include "ModulesStriuk/modulesstriuk.h"
 
 using namespace std;
@@ -22,8 +22,8 @@ int main()
              << "    Z = " << valueZ[i]
              << endl;
         cout << "Очікуваний результат: " << expectedResult[i] << endl;
-        cout << "Отриманий результат: " << s_calculation(valueX[i], valueY[i], valueZ[i]) << endl;
-        cout << endl << endl;
+        cout << "Отриманий результат: " << s_calculation(valueX[i], valueY[i], valueZ[i])
+             << endl << endl;
     }
     _getch();
 
