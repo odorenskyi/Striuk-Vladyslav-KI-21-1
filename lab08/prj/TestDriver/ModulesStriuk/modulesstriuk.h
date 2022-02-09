@@ -3,6 +3,6 @@
 
 #include <cmath>
 
-double s_calculation(int x, int y, int z);
+float s_calculation(float x, float y, float z);
 
 #endif
