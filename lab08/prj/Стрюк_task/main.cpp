@@ -13,16 +13,16 @@ char a = '0', b = '0';
 
 string authorCopyright()
 {
-    return "© Стрюк Владислав Євгенійович";
+    return "В© РЎС‚СЂСЋРє Р’Р»Р°РґРёСЃР»Р°РІ Р„РІРіРµРЅС–Р№РѕРІРёС‡";
 }
 
 void inputVariables(int X, int Y, int Z, char A, char B)
 {
-    cout << "Введіть число X: ";    cin >> X;   x = X;
-    cout << "Введіть число Y: ";    cin >> Y;   y = Y;
-    cout << "Введіть число Z: ";    cin >> Z;   z = Z;
-    cout << "Введіть символ №1: ";  cin >> A;   a = A;
-    cout << "Введіть символ №2: ";  cin >> B;   b = B;
+    cout << "Р’РІРµРґС–С‚СЊ С‡РёСЃР»Рѕ X: ";    cin >> X;   x = X;
+    cout << "Р’РІРµРґС–С‚СЊ С‡РёСЃР»Рѕ Y: ";    cin >> Y;   y = Y;
+    cout << "Р’РІРµРґС–С‚СЊ С‡РёСЃР»Рѕ Z: ";    cin >> Z;   z = Z;
+    cout << "Р’РІРµРґС–С‚СЊ СЃРёРјРІРѕР» в„–1: ";  cin >> A;   a = A;
+    cout << "Р’РІРµРґС–С‚СЊ СЃРёРјРІРѕР» в„–2: ";  cin >> B;   b = B;
     cout << endl;
 }
 
@@ -33,23 +33,23 @@ bool logicalExpression(int A, int B)
 
 void decimalHexNumbersOutput(int X, int Y, int Z)
 {
-    cout << "'x' в десятковій: " << dec << X << endl
-         << "'y' в десятковій: " << dec << Y << endl
-         << "'z' в десятковій: " << dec << Z << endl << endl;
+    cout << "'x' РІ РґРµСЃСЏС‚РєРѕРІС–Р№: " << dec << X << endl
+         << "'y' РІ РґРµСЃСЏС‚РєРѕРІС–Р№: " << dec << Y << endl
+         << "'z' РІ РґРµСЃСЏС‚РєРѕРІС–Р№: " << dec << Z << endl << endl;
 
-    cout << "'x' в шістнацятковій: " << hex << X << endl
-         << "'y' в шістнацятковій: " << hex << Y << endl
-         << "'z' в шістнацятковій: " << hex << Z << endl;
+    cout << "'x' РІ С€С–СЃС‚РЅР°С†СЏС‚РєРѕРІС–Р№: " << hex << X << endl
+         << "'y' РІ С€С–СЃС‚РЅР°С†СЏС‚РєРѕРІС–Р№: " << hex << Y << endl
+         << "'z' РІ С€С–СЃС‚РЅР°С†СЏС‚РєРѕРІС–Р№: " << hex << Z << endl;
 }
 
 int main()
 {
-    system("chcp 1251 & cls");
+    system("chcp 65001 & cls");
     cout << authorCopyright() << endl << endl;
     inputVariables(x, y, z, a, b);
     cout << boolalpha
-         << "Результат " << a << " + 10 >= " << b << " : " << logicalExpression(a, b) << endl << endl;
+         << "Р РµР·СѓР»СЊС‚Р°С‚ " << a << " + 10 >= " << b << " : " << logicalExpression(a, b) << endl << endl;
     decimalHexNumbersOutput(x, y, z);
-    cout << endl << "Результат виразу: " << s_calculation(x, y, z);
+    cout << endl << "Р РµР·СѓР»СЊС‚Р°С‚ РІРёСЂР°Р·Сѓ: " << s_calculation(x, y, z);
     _getch(); return 0;
 }

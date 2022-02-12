@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-    system("chcp 1251 & cls");
+    system("chcp 65001 & cls");
 
     float valueX[5] = { 6.9, 3.65, 10, 0.2, 39 };
     float valueY[5] = { 3, -5, 0.3, -0.3, 9 };
@@ -25,14 +25,14 @@ int main()
         if (abs(expectedResult[i]) >= abs(doneResult))  { testResult = abs(expectedResult[i]) - abs(doneResult) <= delta; }
         else                                            { testResult = abs(doneResult) - abs(expectedResult[i]) <= delta; }
 
-        cout << "Òåñòîâ³ çíà÷åííÿ ¹" << i + 1 << " : "
+        cout << "Ð¢ÐµÑÑ‚Ð¾Ð²Ñ– Ð·Ð½Ð°Ñ‡ÐµÐ½Ð½Ñ â„–" << i + 1 << " : "
              << "X = " << valueX[i]
              << "    Y = " << valueY[i]
              << "    Z = " << valueZ[i]
              << endl;
-        cout << "Î÷³êóâàíèé ðåçóëüòàò: " << expectedResult[i] << endl;
-        cout << "Îòðèìàíèé ðåçóëüòàò: " << doneResult << endl;
-        cout << boolalpha << "Ñòàòóñ êåéñà: " << testResult << endl << endl;
+        cout << "ÐžÑ‡Ñ–ÐºÑƒÐ²Ð°Ð½Ð¸Ð¹ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚: " << expectedResult[i] << endl;
+        cout << "ÐžÑ‚Ñ€Ð¸Ð¼Ð°Ð½Ð¸Ð¹ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚: " << doneResult << endl;
+        cout << boolalpha << "Ð¢ÐµÑÑ‚Ð¾Ð²Ð¸Ð¹ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚: " << testResult << endl << endl;
     }
     _getch();
     return 0;
