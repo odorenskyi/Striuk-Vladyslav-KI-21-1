@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1644647456 source:d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab08\prj\Ñòðþê_task\main.cpp
+	<iostream>
+	<clocale>
+	<iomanip>
+	<conio.h>
+	<cstring>
+	"ModulesStriuk.h"
+
+1644642040 d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab08\prj\modulesÑòðþê\modulesstriuk.h
+	<cmath>
+

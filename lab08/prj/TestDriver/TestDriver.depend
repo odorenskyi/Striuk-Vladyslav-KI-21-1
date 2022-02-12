@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1644648348 source:d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab08\prj\testdriver\main.cpp
+	<iostream>
+	<iomanip>
+	<conio.h>
+	<clocale>
+	"ModulesStriuk.h"
+
+1644642040 d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab08\prj\modulesÑòðþê\modulesstriuk.h
+	<cmath>
+
