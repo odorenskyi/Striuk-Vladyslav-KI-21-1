@@ -9,8 +9,17 @@ enum ukrSize {
     XXL = 31
 };
 
+struct money {
+    float salary;
+    float fizosoba;
+    float pensiya;
+    float bezrob;
+    float pratsa;
+    float completeSalary;
+};
+
 double s_calculation(float x, float y, float z);
-void salaryAndTaxesOutput(int workingHours[5]);
+money salaryAndTaxesOutput(int workingHours[5]);
 void socksSizeStandart(unsigned char ukrSoksSize);
 void numberByteManipulation(unsigned int number);
 

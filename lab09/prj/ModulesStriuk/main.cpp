@@ -11,12 +11,13 @@ double s_calculation(float x, float y, float z)
 }
 
 
-void salaryAndTaxesOutput(int workingHours[5])
+money salaryAndTaxesOutput(int workingHours[5])
 {
     int fullSalary = 0;
+    cout << "========================================================================" << endl;
     for (int i = 0; i < 5; i++) {
         if (workingHours[i] < 0) {
-            cout << "ПОМИЛКА: від\'ємне значення зарплати ! (автоматично визначається як 0)" << endl;
+            cout << endl << "ПОМИЛКА: від\'ємне значення зарплати ! (автоматично визначається як 0)" << endl << endl;
             workingHours[i] = 0;
         }
     }
@@ -31,17 +32,28 @@ void salaryAndTaxesOutput(int workingHours[5])
         else if (workingHours[i] <= 8)  { fullSalary += workingHours[i] * 40; }
         else                            { fullSalary += workingHours[i] * 40 + 300; }
     }
+
+    money m;
+    m.salary = fullSalary;
+    m.fizosoba = fullSalary * 0.15;
+    m.pensiya = fullSalary * 0.02;
+    m.bezrob = fullSalary * 0.006;
+    m.pratsa = fullSalary * 0.01;
+    m.completeSalary = fullSalary - (fullSalary * 0.186);
+
     cout << "Нарахована сума зарплатні: "
-         << fullSalary << " грн" << endl;
+         << m.salary << " грн" << endl;
 
     cout << "Податок на прибуток фізособи (15%%): "
-         << fullSalary * 0.15 << " грн" << endl
+         << m.fizosoba << " грн" << endl
          << "Податок до пенсійного фонду (2%%): "
-         << fullSalary * 0.02 << " грн" << endl
+         << m.pensiya << " грн" << endl
          << "Податок до фонду страхування на випадок безробіття (0.6%%): "
-         << fullSalary * 0.006 << " грн" << endl
+         << m.bezrob << " грн" << endl
          << "Податок на соціально страхування у випадку втрати працезатності (1%%): "
-         << fullSalary * 0.01 << " грн" << endl;
+         << m.pratsa << " грн" << endl;
+    cout << "Сумма до видачі: " << m.completeSalary << " грн" << endl << endl << endl;
+    return m;
 }
 
 
