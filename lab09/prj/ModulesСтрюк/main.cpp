@@ -9,6 +9,12 @@ double s_calculation(float x, float y, float z)
 void salaryAndTaxesOutput(unsigned char workingHours[5])
 {
     float fullSalary = 0;
+    for (int i = 0; i < 5; i++) {
+        if (workingHours[i] < 0) {
+            cout << "ПОМИЛКА: від\'ємне значення зарплати (автоматично визначається як 0)" << endl;
+            workingHours[i] = 0;
+        }
+    }
     cout << "ПН: " << workingHours[0] << endl
          << "ВТ: " << workingHours[1] << endl
          << "СР: " << workingHours[2] << endl
@@ -33,4 +39,13 @@ void salaryAndTaxesOutput(unsigned char workingHours[5])
          << fullSalary * 0.01 << " грн" << endl;
 }
 
+void socksSizeStandart(unsigned char sSize)
+{
+    if (sSize != S && sSize != M && sSize != L && sSize != XL && sSize != XXL) {
+        cout << "ПОМИЛКА: Розмір шкарпеток не відповідає стандарту!" << endl;
+    }
+    cout << "Розмір шкарпеток за українською системою: " << sSize << endl;
+    cout << "Розмір шкарпеток за системою США: " << (sSize / 2) - 3.5 << endl;
+    cout << "Розмір шкарпеток за системою ЄС: " << sSize + 14 << "//" << sSize + 15 << endl;
+}
 

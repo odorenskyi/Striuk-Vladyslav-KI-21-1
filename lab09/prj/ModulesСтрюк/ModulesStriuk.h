@@ -2,7 +2,16 @@
 #define MODULESSTRIUK_H_INCLUDED
 #include <cmath>
 
+enum ukrSize {
+    S = 23,
+    M = 25,
+    L = 27,
+    XL = 29,
+    XXL = 31
+};
+
 double s_calculation(float x, float y, float z);
-void salaryAndTaxesOutput(int workingHours[5]);
+void salaryAndTaxesOutput(unsigned char workingHours[5]);
+void socksSizeStandart(unsigned char ukrSoksSize);
 
 #endif // MODULESSTRIUK_H_INCLUDED
