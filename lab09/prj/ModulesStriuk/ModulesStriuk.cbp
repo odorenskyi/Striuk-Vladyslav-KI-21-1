@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="ModulesСтрюк" />
+		<Option title="ModulesStriuk" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/ModulesСтрюк" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/ModulesStriuk" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
 				<Option object_output="obj/Debug/" />
 				<Option type="2" />
@@ -19,7 +19,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/ModulesСтрюк" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/ModulesStriuk" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
 				<Option object_output="obj/Release/" />
 				<Option type="2" />
@@ -35,7 +35,9 @@
 			</Target>
 		</Build>
 		<Unit filename="ModulesStriuk.h" />
-		<Unit filename="main.cpp" />
+		<Unit filename="main.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
