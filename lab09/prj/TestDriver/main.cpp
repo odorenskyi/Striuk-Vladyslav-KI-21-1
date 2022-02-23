@@ -46,7 +46,7 @@ int main()
     cout << endl << endl << endl << endl;
     for (int i = 0; i < 3; i ++) {
         s = socksSizeStandart(socksSize[i]);
-        if (s.ukrSize == socksSize[i] && s.usSize == (socksSize[i] / 2) - 2.5 &&
+        if (s.ukrSize == socksSize[i] && s.usSize == (socksSize[i] / 2) - 2 &&
             s.esSize1 == socksSize[i] + 14 && s.esSize2 == socksSize[i] + 15) {
         cout << "Passed" << endl;
         }

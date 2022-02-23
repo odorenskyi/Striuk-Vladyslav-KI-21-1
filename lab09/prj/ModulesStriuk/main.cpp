@@ -66,7 +66,7 @@ socks socksSizeStandart(unsigned char sSize)
         return s;
     }
     s.ukrSize = sSize;
-    s.usSize = (sSize / 2) - 2.5;
+    s.usSize = (sSize / 2) - 3;
     s.esSize1 = sSize + 14;
     s.esSize2 = sSize + 15;
 
