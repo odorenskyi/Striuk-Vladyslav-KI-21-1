@@ -13,5 +13,6 @@ enum ukrSize {
 double s_calculation(float x, float y, float z);
 void salaryAndTaxesOutput(unsigned char workingHours[5]);
 void socksSizeStandart(unsigned char ukrSoksSize);
+void numberByteManipulation(unsigned int number);
 
 #endif // MODULESSTRIUK_H_INCLUDED

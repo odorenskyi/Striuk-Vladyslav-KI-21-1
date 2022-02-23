@@ -11,7 +11,7 @@ void salaryAndTaxesOutput(unsigned char workingHours[5])
     float fullSalary = 0;
     for (int i = 0; i < 5; i++) {
         if (workingHours[i] < 0) {
-            cout << "ПОМИЛКА: від\'ємне значення зарплати (автоматично визначається як 0)" << endl;
+            cout << "ПОМИЛКА: від\'ємне значення зарплати ! (автоматично визначається як 0)" << endl;
             workingHours[i] = 0;
         }
     }
@@ -42,10 +42,35 @@ void salaryAndTaxesOutput(unsigned char workingHours[5])
 void socksSizeStandart(unsigned char sSize)
 {
     if (sSize != S && sSize != M && sSize != L && sSize != XL && sSize != XXL) {
-        cout << "ПОМИЛКА: Розмір шкарпеток не відповідає стандарту!" << endl;
+        cout << "ПОМИЛКА: Розмір шкарпеток не відповідає стандарту !" << endl;
     }
     cout << "Розмір шкарпеток за українською системою: " << sSize << endl;
     cout << "Розмір шкарпеток за системою США: " << (sSize / 2) - 3.5 << endl;
     cout << "Розмір шкарпеток за системою ЄС: " << sSize + 14 << "//" << sSize + 15 << endl;
+}
+
+void numberByteManipulation(unsigned int number)
+{
+    if (number < 0 || number > 7483650) {
+        cout << "ПОМИЛКА: число в недоустимому діапазоні !" << endl;
+    }
+
+    int reverseNumber = 0;
+    unsigned int bitCount = 0;
+
+    for (; number; number /= 2;) {
+        reverseNumber = reverseNumber * 2 + number % 2;
+    }
+
+    number = reverseNumber;
+    (number >> 13) & 1 == 1 ? bitValue = 1 : bitValue = 0
+
+    for (unsigned int bitCount = 0, int i = 0; i <= 31; i++) {
+        bitCount += ((number & (1 << i)) != (number >> 13) & 1);
+    }
+
+    switch (number >> 13) & 1:
+        case 0: cout << "Кількість двійкових 1 = " << bitCount << endl;
+        case 1: cout << "Кількість двійкових 0 = " << bitCount << endl;
 }
 
