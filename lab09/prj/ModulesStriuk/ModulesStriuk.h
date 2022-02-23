@@ -28,6 +28,6 @@ struct socks {
 double s_calculation(float x, float y, float z);
 money salaryAndTaxesOutput(int workingHours[5]);
 socks socksSizeStandart(unsigned char ukrSoksSize);
-void numberByteManipulation(unsigned int number);
+int numberByteManipulation(int number);
 
 #endif // MODULESSTRIUK_H_INCLUDED

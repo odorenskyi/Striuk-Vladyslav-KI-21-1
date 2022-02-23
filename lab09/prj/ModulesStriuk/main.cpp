@@ -77,16 +77,16 @@ socks socksSizeStandart(unsigned char sSize)
 }
 
 
-void numberByteManipulation(unsigned int number)
+int numberByteManipulation(int number)
 {
     if (number < 0 || number > 7483650) {
         cout << "ПОМИЛКА: число в недопустимому діапазоні !" << endl;
-        return;
+        return -1;
     }
 
     int reverseNumber = 0;
     int bitValue = 0;
-    unsigned int bitCount = 0;
+    int bitCount = 0;
 
     for (; number; number /= 2) {
         reverseNumber = reverseNumber * 2 + number % 2;
@@ -103,4 +103,5 @@ void numberByteManipulation(unsigned int number)
         case 0: cout << "Кількість двійкових 1 = " << bitCount << endl; break;
         case 1: cout << "Кількість двійкових 0 = " << bitCount << endl; break;
     }
+    return bitCount;
 }

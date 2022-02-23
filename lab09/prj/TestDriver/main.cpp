@@ -3,8 +3,6 @@
 
 using namespace std;
 
-
-
 int main()
 {
     system("chcp 65001 & cls");
@@ -52,14 +50,21 @@ int main()
             s.esSize1 == socksSize[i] + 14 && s.esSize2 == socksSize[i] + 15) {
         cout << "Passed" << endl;
         }
-        else { cout << "Failed" << endl;}
+        else { cout << "Failed" << endl; }
         cout << endl;
     }
 ///////////////////////////////////////////////////////////////////////
 /*********************************************************************/
 /*********************************************************************/
 ///////////////////////////////////////////////////////////////////////
+    int numberEx[3] = {12, 678, 3938683};
+    int bitEx[3] = {2, 31, 13};
 
-
+    for (int i = 0; i < 3; i++) {
+        if (numberByteManipulation(numberEx[i]) == bitEx[i]) {
+            cout << "Passed" << endl;
+        }
+        else { cout << "Failed" << endl; }
+    }
     return 0;
 }
