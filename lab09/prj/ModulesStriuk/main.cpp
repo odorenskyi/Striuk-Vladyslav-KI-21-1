@@ -57,15 +57,23 @@ money salaryAndTaxesOutput(int workingHours[5])
 }
 
 
-void socksSizeStandart(unsigned char sSize)
+socks socksSizeStandart(unsigned char sSize)
 {
+    socks s;
     if (sSize != S && sSize != M && sSize != L && sSize != XL && sSize != XXL) {
         cout << "ПОМИЛКА: Розмір шкарпеток не відповідає стандарту !" << endl;
-        return;
+        s = {-1, -1, -1, -1};
+        return s;
     }
-    cout << "Розмір шкарпеток за українською системою: " << sSize << endl;
-    cout << "Розмір шкарпеток за системою США: " << (sSize / 2) - 3.5 << endl;
-    cout << "Розмір шкарпеток за системою ЄС: " << sSize + 14 << "//" << sSize + 15 << endl;
+    s.ukrSize = sSize;
+    s.usSize = (sSize / 2) - 2.5;
+    s.esSize1 = sSize + 14;
+    s.esSize2 = sSize + 15;
+
+    cout << "Розмір шкарпеток за українською системою: " << s.ukrSize << endl;
+    cout << "Розмір шкарпеток за системою США: " << s.usSize << endl;
+    cout << "Розмір шкарпеток за системою ЄС: " << s.esSize1 << "//" << s.esSize2 << endl;
+    return s;
 }
 
 

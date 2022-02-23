@@ -18,9 +18,16 @@ struct money {
     float completeSalary;
 };
 
+struct socks {
+    int ukrSize;
+    float usSize;
+    int esSize1;
+    int esSize2;
+};
+
 double s_calculation(float x, float y, float z);
 money salaryAndTaxesOutput(int workingHours[5]);
-void socksSizeStandart(unsigned char ukrSoksSize);
+socks socksSizeStandart(unsigned char ukrSoksSize);
 void numberByteManipulation(unsigned int number);
 
 #endif // MODULESSTRIUK_H_INCLUDED
