@@ -64,5 +64,6 @@ int main()
         }
         else { cout << "Failed" << endl; }
     }
+    getchar();
     return 0;
 }
