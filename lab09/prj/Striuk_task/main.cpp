@@ -19,12 +19,12 @@ int main()
         int salaryArray[5] = {rand()%24, rand()%24, rand()%24, rand()%24, rand()%24};
         int randNum;
         switch (_getch()) {
-            case 'v': cout << endl << "s_calculation: " << s_calculation(rand(), rand(), rand()) << endl; break;
+            case 'v': cout << endl << endl << "s_calculation: " << s_calculation(rand(), rand(), rand()) << endl; break;
             case 'n': cout << endl << "salaryAndTaxesOutput: " << endl;
                       m = salaryAndTaxesOutput(salaryArray);
                       break;
             case 'm': randNum = rand()%35;
-                      cout << endl << "socksSizeStandart: " << randNum << endl;
+                      cout << endl << endl << "socksSizeStandart: " << randNum << endl;
                       s = socksSizeStandart(randNum);
                       break;
             case 'q': randNum = rand();
@@ -33,6 +33,7 @@ int main()
                       break;
             case 'w': return 0; break;
             case 'W': return 0; break;
+            default: cout << "\a" << endl; continue;
         }
     }
 }
