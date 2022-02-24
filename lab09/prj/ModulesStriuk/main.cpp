@@ -10,10 +10,8 @@ double s_calculation(float x, float y, float z)
     return log(x - y) + sqrt((PI * pow(x, 2)) / x + (z / (2 * pow(y, 2))));
 }
 
-
 money salaryAndTaxesOutput(int workingHours[5])
 {
-    int fullSalary = 0;
     cout << "========================================================================" << endl;
     for (int i = 0; i < 5; i++) {
         if (workingHours[i] < 0) {
@@ -27,12 +25,12 @@ money salaryAndTaxesOutput(int workingHours[5])
          << "ЧТ: " << workingHours[3] << endl
          << "ПТ: " << workingHours[4] << endl << endl;
 
+    int fullSalary = 0;
     for (int i = 0; i < 5; i++) {
         if (workingHours[i] <= 0)       { continue; }
         else if (workingHours[i] <= 8)  { fullSalary += workingHours[i] * 40; }
         else                            { fullSalary += workingHours[i] * 40 + 300; }
     }
-
     money m;
     m.salary = fullSalary;
     m.fizosoba = fullSalary * 0.15;
@@ -43,7 +41,6 @@ money salaryAndTaxesOutput(int workingHours[5])
 
     cout << "Нарахована сума зарплатні: "
          << m.salary << " грн" << endl;
-
     cout << "Податок на прибуток фізособи (15%): "
          << m.fizosoba << " грн" << endl
          << "Податок до пенсійного фонду (2%): "
@@ -56,26 +53,21 @@ money salaryAndTaxesOutput(int workingHours[5])
     return m;
 }
 
-
 socks socksSizeStandart(unsigned char sSize)
 {
-    socks s;
-    if (sSize != S && sSize != M && sSize != L && sSize != XL && sSize != XXL) {
+    if (sSize != 23 && sSize != 25 && sSize != 27 && sSize != 29 && sSize != 31) {
         cout << "ПОМИЛКА: Розмір шкарпеток не відповідає стандарту !" << endl;
-        s = {-1, -1, -1, -1};
-        return s;
+        return {-1, -1, -1, -1};
     }
-    s.ukrSize = sSize;
-    s.usSize = (sSize / 2) - 2;
-    s.esSize1 = sSize + 14;
-    s.esSize2 = sSize + 15;
+    socks s;
+    s.ukrSize = sSize;          s.usSize = (sSize / 2) - 2;
+    s.esSize1 = sSize + 14;     s.esSize2 = sSize + 15;
 
     cout << "Розмір шкарпеток за українською системою: " << s.ukrSize << endl;
     cout << "Розмір шкарпеток за системою США: " << s.usSize << endl;
     cout << "Розмір шкарпеток за системою ЄС: " << s.esSize1 << "//" << s.esSize2 << endl;
     return s;
 }
-
 
 int numberByteManipulation(int number)
 {
@@ -85,20 +77,15 @@ int numberByteManipulation(int number)
     }
 
     int reverseNumber = 0;
-    int bitValue = 0;
     int bitCount = 0;
 
     for (; number; number /= 2) {
         reverseNumber = reverseNumber * 2 + number % 2;
     }
-
     number = reverseNumber;
-    ((number >> 7) & 1) == 1 ? bitValue = 1 : bitValue = 0;
-
     for (int i = 0; i <= 31; i++) {
         bitCount += ((number & (1 << i)) != ((number >> 7) & 1));
     }
-
     switch (((number >> 7) & 1)) {
         case 0: cout << "Кількість двійкових 1 = " << bitCount << endl; break;
         case 1: cout << "Кількість двійкових 0 = " << bitCount << endl; break;

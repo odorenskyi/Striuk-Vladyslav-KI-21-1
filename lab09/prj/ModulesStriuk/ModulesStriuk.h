@@ -1,14 +1,6 @@
 #ifndef MODULESSTRIUK_H_INCLUDED
 #define MODULESSTRIUK_H_INCLUDED
 
-enum ukrSize {
-    S = 23,
-    M = 25,
-    L = 27,
-    XL = 29,
-    XXL = 31
-};
-
 struct money {
     float salary;
     float fizosoba;
