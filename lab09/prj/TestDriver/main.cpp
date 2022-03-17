@@ -56,7 +56,7 @@ int main()
 /*********************************************************************/
 
     int numberEx[3] = {12, 678, 3938683};
-    int bitEx[3] = {2, 31, 13};
+    int bitEx[3] = {2, 9, 13};
 
     for (int i = 0; i < 3; i++) {
         if (numberByteManipulation(numberEx[i]) == bitEx[i]) {

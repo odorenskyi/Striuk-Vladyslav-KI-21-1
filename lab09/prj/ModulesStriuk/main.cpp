@@ -96,10 +96,14 @@ int numberByteManipulation(int number)
     number = reverseNumber;
 
 /// Додавання до кількості бітів результату логічного виразу (біт не має бути рівним сьомому)
+    int saveIndex = 0;
     for (int i = 0; i <= 31; i++) {
+        if (number & (1 << i)) { saveIndex = i + 1; }
         bitCount += ((number & (1 << i)) != ((number >> 7) & 1));
     }
-    switch (((number >> 7) & 1)) {
+    if ((number >> 7) & 1) { bitCount = bitCount - (31 - saveIndex); }
+
+    switch ((number >> 7) & 1) {
         case 0: cout << "Кількість двійкових 1 = " << bitCount << endl; break;
         case 1: cout << "Кількість двійкових 0 = " << bitCount << endl; break;
     }
