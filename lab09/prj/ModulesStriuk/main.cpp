@@ -13,6 +13,7 @@ double s_calculation(float x, float y, float z)
 money salaryAndTaxesOutput(int workingHours[5])
 {
     cout << "========================================================================" << endl;
+/// Перевірка на правильність вказання часу
     for (int i = 0; i < 5; i++) {
         if (workingHours[i] < 0) {
             cout << endl << "ПОМИЛКА: від\'ємне значення зарплати ! (автоматично визначається як 0)" << endl << endl;
@@ -25,12 +26,15 @@ money salaryAndTaxesOutput(int workingHours[5])
          << "ЧТ: " << workingHours[3] << endl
          << "ПТ: " << workingHours[4] << endl << endl;
 
+/// Нарахування ЗП згідно з відпрацьованих годин
     int fullSalary = 0;
     for (int i = 0; i < 5; i++) {
         if (workingHours[i] <= 0)       { continue; }
         else if (workingHours[i] <= 8)  { fullSalary += workingHours[i] * 40; }
         else                            { fullSalary += workingHours[i] * 40 + 300; }
     }
+
+/// Визначення податків та ЗП у кінечному результаті
     money m;
     m.salary = fullSalary;
     m.fizosoba = fullSalary * 0.15;
@@ -55,13 +59,18 @@ money salaryAndTaxesOutput(int workingHours[5])
 
 socks socksSizeStandart(unsigned char sSize)
 {
+/// Заверешення функції при недопустимих вхідних даних
     if (sSize != 23 && sSize != 25 && sSize != 27 && sSize != 29 && sSize != 31) {
         cout << "ПОМИЛКА: Розмір шкарпеток не відповідає стандарту !" << endl;
         return {-1, -1, -1, -1};
     }
+
+/// Виведення аналогів розміру (для спрощення коду, за знайденною закономірністю, використовуються формули)
     socks s;
-    s.ukrSize = sSize;          s.usSize = (sSize / 2) - 2;
-    s.esSize1 = sSize + 14;     s.esSize2 = sSize + 15;
+    s.ukrSize = sSize;
+    s.usSize = (sSize / 2) - 2;
+    s.esSize1 = sSize + 14;
+    s.esSize2 = sSize + 15;
 
     cout << "Розмір шкарпеток за українською системою: " << s.ukrSize << endl;
     cout << "Розмір шкарпеток за системою США: " << s.usSize << endl;
@@ -71,6 +80,7 @@ socks socksSizeStandart(unsigned char sSize)
 
 int numberByteManipulation(int number)
 {
+/// Завершення функції, при невідповідних до заданого діапазону чисел
     if (number < 0 || number > 7483650) {
         cout << "ПОМИЛКА: число в недопустимому діапазоні !" << endl;
         return -1;
@@ -79,10 +89,13 @@ int numberByteManipulation(int number)
     int reverseNumber = 0;
     int bitCount = 0;
 
+/// Інвертування числа (біти, за замовчуванням, рахуються з кінця числа)
     for (; number; number /= 2) {
         reverseNumber = reverseNumber * 2 + number % 2;
     }
     number = reverseNumber;
+
+/// Додавання до кількості бітів результату логічного виразу (біт не має бути рівним сьомому)
     for (int i = 0; i <= 31; i++) {
         bitCount += ((number & (1 << i)) != ((number >> 7) & 1));
     }
