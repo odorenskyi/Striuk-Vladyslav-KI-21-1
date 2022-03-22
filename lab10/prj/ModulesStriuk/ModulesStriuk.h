@@ -1,5 +1,6 @@
 #ifndef MODULESSTRIUK_H_INCLUDED
 #define MODULESSTRIUK_H_INCLUDED
+#include <cstring>
 
 struct money {
     float salary;
@@ -21,5 +22,9 @@ double s_calculation(float x, float y, float z);
 money salaryAndTaxesOutput(int workingHours[5]);
 socks socksSizeStandart(unsigned char ukrSoksSize);
 int numberByteManipulation(int number);
+
+void authorInfoVowelsFindWord();
+void addInfoToTxt();
+void addCalcResAndBinaryDigit();
 
 #endif // MODULESSTRIUK_H_INCLUDED

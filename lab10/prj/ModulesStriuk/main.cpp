@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cmath>
 #include "ModulesStriuk.h"
+#include <cstring>
+#include <fstream>
 
 using namespace std;
 
@@ -108,4 +110,19 @@ int numberByteManipulation(int number)
         case 1: cout << "Кількість двійкових 0 = " << bitCount << endl; break;
     }
     return bitCount;
+}
+
+void authorInfoVowelsFindWord()
+{
+
+}
+
+void addInfoToTxt()
+{
+
+}
+
+void addCalcResAndBinaryDigit()
+{
+
 }
