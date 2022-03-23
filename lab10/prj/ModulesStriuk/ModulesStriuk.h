@@ -30,7 +30,6 @@ void abilityToEdit();
 void fillInputTxtFile(string ukrWord);
 void authorInfo();
 int vowelsCountInFile();
-void addInfoToTxt();
-void addCalcResAndBinaryDigit();
+void findWordInPoem(string ukrWord);
 
 #endif // MODULESSTRIUK_H_INCLUDED

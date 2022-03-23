@@ -169,16 +169,29 @@ int vowelsCountInFile()
             }
         }
     }
-    outputFile << "Кількість голосних літер з вхідного файлу: " << vowelsCount << endl;
+    outputFile << "Кількість голосних літер з вхідного файлу: " << vowelsCount << endl << endl;
     fclose(inputFile);
     outputFile.close();
     return vowelsCount;
 }
 
-// ЗАВДАННЯ 10.2 //
-void addInfoToTxt()
+// ЗАВДАННЯ 10.2(3) //
+void findWordInPoem(string ukrWord)
 {
-
+    ofstream outputFile("prjOutputFile.txt", ios::app);
+    string poemVI[4] = { "До щастя не пускає лінощів орава.",
+                         "У чім воно - ніхто не знає до пуття.",
+                         "Навчитись радісно робити кожну справу",
+                         "Найперше правило щасливого життя" };
+    for (int i = 0; i < 4; i++) {
+        if (poemVI[i].find(ukrWord, 0) > 0) {
+            outputFile << "Знайдено слово \"" << ukrWord << "\"" << endl << endl;
+            outputFile.close();
+            return;
+        }
+    }
+    outputFile << "Cлово \"" << ukrWord << "\" - не знайдено" << endl << endl;
+    outputFile.close();
 }
 
 // ЗАВДАННЯ 10.3 //
