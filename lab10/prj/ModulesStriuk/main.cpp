@@ -117,22 +117,37 @@ int numberByteManipulation(int number)
 }
 
 // ДО ЗАВДАННЬ 10.1, 10.2, 10.3 //
-void fillInputTxtFile(string ukrWord)
+void abilityToEdit()
 {
-    ofstream inputFile("prjInputFile.txt", ios::in);
-	if (!inputFile) {
+    ofstream inputFile("prjInputFile.txt");
+    if (!inputFile) {
 		cout << "Неможливо відкрити файл для редагування\a" << endl;
         inputFile.close();
 		exit(1);
 	}
+	inputFile.close();
+}
+
+void fillInputTxtFile(string ukrWord)
+{
+    abilityToEdit();
+    ofstream inputFile("prjInputFile.txt", ios::in);
 	inputFile << ukrWord << endl;
 	inputFile.close();
 }
 
-// ЗАВДАННЯ 10.1 //
+// ЗАВДАННЯ 10.1(1) //
 void authorInfoVowelsFindWord()
 {
-
+    abilityToEdit();
+    ofstream inputFile("prjInputFile.txt", ios::in);
+	inputFile << "====================================================================" << endl
+              << " Виконавець:         Стрюк Владислав Євгенійович" << endl
+              << " Рік розробки:       2022" << endl
+              << " Місто/Країна:       Кропивницький/Україна" << endl
+              << " ВНЗ:                Центральний Національний Технічний Університет" << endl
+              << "====================================================================" << endl << endl;
+    inputFile.close();
 }
 
 // ЗАВДАННЯ 10.2 //
