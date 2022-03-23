@@ -120,34 +120,59 @@ int numberByteManipulation(int number)
 void abilityToEdit()
 {
     ofstream inputFile("prjInputFile.txt");
-    if (!inputFile) {
+    ofstream outputFile("prjOutputFile.txt");
+    if (!inputFile || !outputFile) {
 		cout << "Неможливо відкрити файл для редагування\a" << endl;
         inputFile.close();
+        outputFile.close();
 		exit(1);
 	}
 	inputFile.close();
+	outputFile.close();
 }
 
 void fillInputTxtFile(string ukrWord)
 {
     abilityToEdit();
-    ofstream inputFile("prjInputFile.txt", ios::in);
+    ofstream inputFile("prjInputFile.txt", ios::out);
 	inputFile << ukrWord << endl;
 	inputFile.close();
 }
 
 // ЗАВДАННЯ 10.1(1) //
-void authorInfoVowelsFindWord()
+void authorInfo()
 {
     abilityToEdit();
-    ofstream inputFile("prjInputFile.txt", ios::in);
-	inputFile << "====================================================================" << endl
-              << " Виконавець:         Стрюк Владислав Євгенійович" << endl
-              << " Рік розробки:       2022" << endl
-              << " Місто/Країна:       Кропивницький/Україна" << endl
-              << " ВНЗ:                Центральний Національний Технічний Університет" << endl
-              << "====================================================================" << endl << endl;
-    inputFile.close();
+    ofstream outputFile("prjOutputFile.txt", ios::out);
+	outputFile << "====================================================================" << endl
+               << " Виконавець:         Стрюк Владислав Євгенійович" << endl
+               << " Рік розробки:       2022" << endl
+               << " Місто/Країна:       Кропивницький/Україна" << endl
+               << " ВНЗ:                Центральний Національний Технічний Університет" << endl
+               << "====================================================================" << endl << endl;
+    outputFile.close();
+}
+
+// ЗАВДАННЯ 10.1(2) //
+int vowelsCountInFile()
+{
+    abilityToEdit();
+    ofstream outputFile("prjOutputFile.txt", ios::app);
+    FILE* inputFile = fopen("prjInputFile.txt", "r");
+
+    string vowels = "АаЕеЄєИиІіЇїОоУуЮюЯя";
+    int vowelsCount = 0;
+    while(!feof(inputFile)) {
+        for (int i = 0; i < 20; i++) {
+            if (getc(inputFile) == vowels[i]) {
+                vowelsCount++;
+            }
+        }
+    }
+    outputFile << "Кількість голосних літер з вхідного файлу: " << vowelsCount << endl;
+    fclose(inputFile);
+    outputFile.close();
+    return vowelsCount;
 }
 
 // ЗАВДАННЯ 10.2 //

@@ -26,10 +26,11 @@ money salaryAndTaxesOutput(int workingHours[5]);
 socks socksSizeStandart(unsigned char ukrSoksSize);
 int numberByteManipulation(int number);
 
-void authorInfoVowelsFindWord();
+void abilityToEdit();
+void fillInputTxtFile(string ukrWord);
+void authorInfo();
+int vowelsCountInFile();
 void addInfoToTxt();
 void addCalcResAndBinaryDigit();
-
-void fillInputTxtFile(string ukrWord);
 
 #endif // MODULESSTRIUK_H_INCLUDED
