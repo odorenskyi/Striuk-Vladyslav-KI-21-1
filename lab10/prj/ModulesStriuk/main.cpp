@@ -1,21 +1,23 @@
 #include <iostream>
-#include <cmath>
-#include "ModulesStriuk.h"
-#include <cstring>
 #include <fstream>
+#include <cmath>
+#include <cstring>
+#include "ModulesStriuk.h"
 
 using namespace std;
 
+// ЗАВДАННЯ 8.1 //
 double s_calculation(float x, float y, float z)
 {
     const double PI = 3.14159;
     return log(x - y) + sqrt((PI * pow(x, 2)) / x + (z / (2 * pow(y, 2))));
 }
 
+// ЗАВДАННЯ 9.1 //
 money salaryAndTaxesOutput(int workingHours[5])
 {
     cout << "========================================================================" << endl;
-/// Перевірка на правильність вказання часу
+    /// Перевірка на правильність вказання часу
     for (int i = 0; i < 5; i++) {
         if (workingHours[i] < 0) {
             cout << endl << "ПОМИЛКА: від\'ємне значення зарплати ! (автоматично визначається як 0)" << endl << endl;
@@ -28,7 +30,7 @@ money salaryAndTaxesOutput(int workingHours[5])
          << "ЧТ: " << workingHours[3] << endl
          << "ПТ: " << workingHours[4] << endl << endl;
 
-/// Нарахування ЗП згідно з відпрацьованих годин
+    /// Нарахування ЗП згідно з відпрацьованих годин
     int fullSalary = 0;
     for (int i = 0; i < 5; i++) {
         if (workingHours[i] <= 0)       { continue; }
@@ -36,7 +38,7 @@ money salaryAndTaxesOutput(int workingHours[5])
         else                            { fullSalary += workingHours[i] * 40 + 300; }
     }
 
-/// Визначення податків та ЗП у кінечному результаті
+    /// Визначення податків та ЗП у кінечному результаті
     money m;
     m.salary = fullSalary;
     m.fizosoba = fullSalary * 0.15;
@@ -59,15 +61,16 @@ money salaryAndTaxesOutput(int workingHours[5])
     return m;
 }
 
+// ЗАВДАННЯ 9.2 //
 socks socksSizeStandart(unsigned char sSize)
 {
-/// Заверешення функції при недопустимих вхідних даних
+    /// Заверешення функції при недопустимих вхідних даних
     if (sSize != 23 && sSize != 25 && sSize != 27 && sSize != 29 && sSize != 31) {
         cout << "ПОМИЛКА: Розмір шкарпеток не відповідає стандарту !" << endl;
         return {-1, -1, -1, -1};
     }
 
-/// Виведення аналогів розміру (для спрощення коду, за знайденною закономірністю, використовуються формули)
+    /// Виведення аналогів розміру (для спрощення коду, за знайденною закономірністю, використовуються формули)
     socks s;
     s.ukrSize = sSize;
     s.usSize = (sSize / 2) - 2;
@@ -80,9 +83,10 @@ socks socksSizeStandart(unsigned char sSize)
     return s;
 }
 
+// ЗАВДАННЯ 9.3 //
 int numberByteManipulation(int number)
 {
-/// Завершення функції, при невідповідних до заданого діапазону чисел
+    /// Завершення функції, при невідповідних до заданого діапазону чисел
     if (number < 0 || number > 7483650) {
         cout << "ПОМИЛКА: число в недопустимому діапазоні !" << endl;
         return -1;
@@ -91,13 +95,13 @@ int numberByteManipulation(int number)
     int reverseNumber = 0;
     int bitCount = 0;
 
-/// Інвертування числа (біти, за замовчуванням, рахуються з кінця числа)
+    /// Інвертування числа (біти, за замовчуванням, рахуються з кінця числа)
     for (; number; number /= 2) {
         reverseNumber = reverseNumber * 2 + number % 2;
     }
     number = reverseNumber;
 
-/// Додавання до кількості бітів результату логічного виразу (біт не має бути рівним сьомому)
+    /// Додавання до кількості бітів результату логічного виразу (біт не має бути рівним сьомому)
     int saveIndex = 0;
     for (int i = 0; i <= 31; i++) {
         if (number & (1 << i)) { saveIndex = i + 1; }
@@ -112,16 +116,35 @@ int numberByteManipulation(int number)
     return bitCount;
 }
 
+string fillInputTxtFile()
+{
+    ofstream inputFile("prjInputFile.txt");
+	if (!inputFile) {
+		cout << "Неможливо відкрити файл для редагування\a" << endl;
+		exit(1);
+	}
+
+	string ukrWord;
+	cout << "Введіть довільне слово українською мовою: ";
+	cin >> ukrWord;
+
+	inputFile << ukrWord << endl;
+	return ukrWord;
+}
+
+// ЗАВДАННЯ 10.1 //
 void authorInfoVowelsFindWord()
 {
 
 }
 
+// ЗАВДАННЯ 10.2 //
 void addInfoToTxt()
 {
 
 }
 
+// ЗАВДАННЯ 10.3 //
 void addCalcResAndBinaryDigit()
 {
 
