@@ -30,7 +30,7 @@ int numberByteManipulation(int number);
 void abilityToEdit(string outputFileName, string inputFileName);
 bool fillInputTxtFile(string inputFileName, string ukrWord);
 bool authorInfo(string outputFileName);
-int vowelsCountInFile(string outputFileName);
+int vowelsCountInFile(string outputFileName, string ukrWord);
 void findWordInPoem(string outputFileName, string ukrWord);
 void consonantsCountInFile();
 void timestampInFile(string inputFileName);

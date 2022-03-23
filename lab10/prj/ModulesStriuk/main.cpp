@@ -163,22 +163,23 @@ bool authorInfo(string outputFileName)
 }
 
 // ЗАВДАННЯ 10.1(2) //
-int vowelsCountInFile(string outputFileName)
+int vowelsCountInFile(string outputFileName, string ukrWord)
 {
     ofstream outputFile(outputFileName, ios::app);
-    FILE* inputFile = fopen("prjInputFile.txt", "r");
     string vowels = "АаЕеЄєИиІіЇїОоУуЮюЯя";
     int vowelsCount = 0;
 
-    while(!feof(inputFile)) {
-        for (int i = 0; i < 20; i++) {
-            if (getc(inputFile) == vowels[i]) {
+    for (int i = 0; i < ukrWord.length(); i++) {
+            cout << "lenght" << ukrWord.length() << endl;
+        for (int j = 0; j < 20; j++) {
+            if (ukrWord[i] == vowels[j]) {
                 vowelsCount++;
+                cout << "count:::" << i << "   " << vowelsCount << endl;
+                break;
             }
         }
     }
     outputFile << "Кількість голосних літер з вхідного файлу: " << vowelsCount << endl << endl;
-    fclose(inputFile);
     outputFile.close();
     return vowelsCount;
 }
