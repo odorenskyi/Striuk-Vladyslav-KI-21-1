@@ -12,7 +12,8 @@ int main()
 
     for(int i = 0; i < 5; i++) {
         abilityToEdit("prjOutputFile.txt", "prjInputFile.txt");
-        fillInputTxtFile("prjInputFile.txt", inputWordsArray[i]);
+        cout << "fillInputTxtFile - " << fillInputTxtFile("prjInputFile.txt", inputWordsArray[i]) << endl;
+        cout << "authorInfo - " << authorInfo("prjOutputFile.txt") << endl;
         _getch();
     }
     return 0;

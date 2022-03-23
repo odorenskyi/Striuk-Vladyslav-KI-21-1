@@ -28,8 +28,8 @@ int numberByteManipulation(int number);
 
 
 void abilityToEdit(string outputFileName, string inputFileName);
-void fillInputTxtFile(string inputFileName, string ukrWord);
-void authorInfo(string outputFileName);
+bool fillInputTxtFile(string inputFileName, string ukrWord);
+bool authorInfo(string outputFileName);
 int vowelsCountInFile(string outputFileName);
 void findWordInPoem(string outputFileName, string ukrWord);
 void consonantsCountInFile();

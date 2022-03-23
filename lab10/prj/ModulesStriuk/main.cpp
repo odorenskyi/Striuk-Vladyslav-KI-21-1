@@ -140,15 +140,16 @@ void abilityToEdit(string outputFileName, string inputFileName)
 	outputFile.close();
 }
 
-void fillInputTxtFile(string inputFileName, string ukrWord)
+bool fillInputTxtFile(string inputFileName, string ukrWord)
 {
     ofstream inputFile(inputFileName, ios::out);
 	inputFile << ukrWord << endl;
 	inputFile.close();
+	return true;
 }
 
 // ЗАВДАННЯ 10.1(1) //
-void authorInfo(string outputFileName)
+bool authorInfo(string outputFileName)
 {
     ofstream outputFile(outputFileName, ios::out);
 	outputFile << "====================================================================" << endl
@@ -158,6 +159,7 @@ void authorInfo(string outputFileName)
                << " ВНЗ:                Центральний Національний Технічний Університет" << endl
                << "====================================================================" << endl << endl;
     outputFile.close();
+    return true;
 }
 
 // ЗАВДАННЯ 10.1(2) //
