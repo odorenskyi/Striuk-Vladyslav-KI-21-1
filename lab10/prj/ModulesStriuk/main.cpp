@@ -121,6 +121,7 @@ void abilityToEdit()
 {
     ofstream inputFile("prjInputFile.txt");
     ofstream outputFile("prjOutputFile.txt");
+
     if (!inputFile || !outputFile) {
 		cout << "Неможливо відкрити файл для редагування\a" << endl;
         inputFile.close();
@@ -134,6 +135,7 @@ void abilityToEdit()
 void fillInputTxtFile(string ukrWord)
 {
     abilityToEdit();
+
     ofstream inputFile("prjInputFile.txt", ios::out);
 	inputFile << ukrWord << endl;
 	inputFile.close();
@@ -143,6 +145,7 @@ void fillInputTxtFile(string ukrWord)
 void authorInfo()
 {
     abilityToEdit();
+
     ofstream outputFile("prjOutputFile.txt", ios::out);
 	outputFile << "====================================================================" << endl
                << " Виконавець:         Стрюк Владислав Євгенійович" << endl
@@ -157,11 +160,12 @@ void authorInfo()
 int vowelsCountInFile()
 {
     abilityToEdit();
+
     ofstream outputFile("prjOutputFile.txt", ios::app);
     FILE* inputFile = fopen("prjInputFile.txt", "r");
-
     string vowels = "АаЕеЄєИиІіЇїОоУуЮюЯя";
     int vowelsCount = 0;
+
     while(!feof(inputFile)) {
         for (int i = 0; i < 20; i++) {
             if (getc(inputFile) == vowels[i]) {
@@ -179,11 +183,13 @@ int vowelsCountInFile()
 void findWordInPoem(string ukrWord)
 {
     abilityToEdit();
+
     ofstream outputFile("prjOutputFile.txt", ios::app);
     string poemVI[4] = { "До щастя не пускає лінощів орава.",
                          "У чім воно - ніхто не знає до пуття.",
                          "Навчитись радісно робити кожну справу",
                          "Найперше правило щасливого життя" };
+
     for (int i = 0; i < 4; i++) {
         if (poemVI[i].find(ukrWord, 0) > 0) {
             outputFile << "Знайдено слово \"" << ukrWord << "\"" << endl << endl;
@@ -199,10 +205,12 @@ void findWordInPoem(string ukrWord)
 void consonantsCountInFile()
 {
     abilityToEdit();
+
     FILE* inputFile = fopen("prjInputFile.txt", "r");
     string vowels = "АаЕеЄєИиІіЇїОоУуЮюЯя";
     int consonantsCount = 0;
     char symbol;
+
     while(!feof(inputFile)) {
         symbol = getc(inputFile);
         for (int i = 0; i < 20; i++) {
@@ -218,5 +226,14 @@ void consonantsCountInFile()
 
     ofstream inputTxtFile("prjInputFile.txt", ios::app);
     inputTxtFile << "Кількість приголосних літер з вхідного файлу: " << consonantsCount << endl << endl;
+    inputTxtFile.close();
+}
+
+// ЗАВДАННЯ 10.2(1) //
+void timestampInFile()
+{
+    abilityToEdit();
+    ofstream inputTxtFile("prjInputFile.txt", ios::app);
+    inputTxtFile << "Дата та час дозапису інформаціїї: " << __TIMESTAMP__ << endl << endl;
     inputTxtFile.close();
 }
