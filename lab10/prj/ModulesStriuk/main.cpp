@@ -13,6 +13,10 @@ double s_calculation(float x, float y, float z)
     return log(x - y) + sqrt((PI * pow(x, 2)) / x + (z / (2 * pow(y, 2))));
 }
 
+
+
+
+
 // ЗАВДАННЯ 9.1 //
 money salaryAndTaxesOutput(int workingHours[5])
 {
@@ -116,11 +120,15 @@ int numberByteManipulation(int number)
     return bitCount;
 }
 
+
+
+
+
 // ДО ЗАВДАННЬ 10.1, 10.2, 10.3 //
-void abilityToEdit()
+void abilityToEdit(string outputFileName, string inputFileName)
 {
-    ofstream inputFile("prjInputFile.txt");
-    ofstream outputFile("prjOutputFile.txt");
+    ofstream inputFile(inputFileName);
+    ofstream outputFile(outputFileName);
 
     if (!inputFile || !outputFile) {
 		cout << "Неможливо відкрити файл для редагування\a" << endl;
@@ -132,21 +140,17 @@ void abilityToEdit()
 	outputFile.close();
 }
 
-void fillInputTxtFile(string ukrWord)
+void fillInputTxtFile(string inputFileName, string ukrWord)
 {
-    abilityToEdit();
-
-    ofstream inputFile("prjInputFile.txt", ios::out);
+    ofstream inputFile(inputFileName, ios::out);
 	inputFile << ukrWord << endl;
 	inputFile.close();
 }
 
 // ЗАВДАННЯ 10.1(1) //
-void authorInfo()
+void authorInfo(string outputFileName)
 {
-    abilityToEdit();
-
-    ofstream outputFile("prjOutputFile.txt", ios::out);
+    ofstream outputFile(outputFileName, ios::out);
 	outputFile << "====================================================================" << endl
                << " Виконавець:         Стрюк Владислав Євгенійович" << endl
                << " Рік розробки:       2022" << endl
@@ -157,11 +161,9 @@ void authorInfo()
 }
 
 // ЗАВДАННЯ 10.1(2) //
-int vowelsCountInFile()
+int vowelsCountInFile(string outputFileName)
 {
-    abilityToEdit();
-
-    ofstream outputFile("prjOutputFile.txt", ios::app);
+    ofstream outputFile(outputFileName, ios::app);
     FILE* inputFile = fopen("prjInputFile.txt", "r");
     string vowels = "АаЕеЄєИиІіЇїОоУуЮюЯя";
     int vowelsCount = 0;
@@ -180,11 +182,9 @@ int vowelsCountInFile()
 }
 
 // ЗАВДАННЯ 10.2(3) //
-void findWordInPoem(string ukrWord)
+void findWordInPoem(string outputFileName, string ukrWord)
 {
-    abilityToEdit();
-
-    ofstream outputFile("prjOutputFile.txt", ios::app);
+    ofstream outputFile(outputFileName, ios::app);
     string poemVI[4] = { "До щастя не пускає лінощів орава.",
                          "У чім воно - ніхто не знає до пуття.",
                          "Навчитись радісно робити кожну справу",
@@ -204,8 +204,6 @@ void findWordInPoem(string ukrWord)
 // ЗАВДАННЯ 10.2(1) //
 void consonantsCountInFile()
 {
-    abilityToEdit();
-
     FILE* inputFile = fopen("prjInputFile.txt", "r");
     string vowels = "АаЕеЄєИиІіЇїОоУуЮюЯя";
     int consonantsCount = 0;
@@ -230,10 +228,36 @@ void consonantsCountInFile()
 }
 
 // ЗАВДАННЯ 10.2(1) //
-void timestampInFile()
+void timestampInFile(string inputFileName)
 {
-    abilityToEdit();
-    ofstream inputTxtFile("prjInputFile.txt", ios::app);
-    inputTxtFile << "Дата та час дозапису інформаціїї: " << __TIMESTAMP__ << endl << endl;
-    inputTxtFile.close();
+    ofstream inputFile(inputFileName, ios::app);
+    inputFile << "Дата та час дозапису інформаціїї: " << __TIMESTAMP__ << endl << endl;
+    inputFile.close();
 }
+
+double sCalculationResInFile(float x, float y, float z)
+{
+    ofstream outputFile("prjOutputFile.txt", ios::app);
+    outputFile << "Результат виконання s_calculation: " << s_calculation(x, y, z) << endl << endl;
+    outputFile.close();
+    return s_calculation(x, y, z);
+}
+
+void decimalToBinary(string outputFileName, int number)
+{
+    ofstream outputFile(outputFileName, ios::app);
+    int binaryCels[32];
+    int i;
+
+    for(i = 0; number > 0; i++) {
+        binaryCels[i] = number % 2;
+        number = number / 2;
+    }
+    outputFile << "Двійкове представлення числа " << number << " : ";
+    for(i = i - 1; i >= 0; i--) {
+        outputFile << binaryCels[i];
+    }
+    outputFile << endl << endl;
+    outputFile.close();
+}
+

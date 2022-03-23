@@ -26,10 +26,16 @@ money salaryAndTaxesOutput(int workingHours[5]);
 socks socksSizeStandart(unsigned char ukrSoksSize);
 int numberByteManipulation(int number);
 
-void abilityToEdit();
-void fillInputTxtFile(string ukrWord);
-void authorInfo();
-int vowelsCountInFile();
-void findWordInPoem(string ukrWord);
+
+void abilityToEdit(string outputFileName, string inputFileName);
+void fillInputTxtFile(string inputFileName, string ukrWord);
+void authorInfo(string outputFileName);
+int vowelsCountInFile(string outputFileName);
+void findWordInPoem(string outputFileName, string ukrWord);
+void consonantsCountInFile();
+void timestampInFile(string inputFileName);
+double sCalculationResInFile(float x, float y, float z);
+void decimalToBinary(string outputFileName, int number);
+
 
 #endif // MODULESSTRIUK_H_INCLUDED
