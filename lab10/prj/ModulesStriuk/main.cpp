@@ -119,12 +119,14 @@ int numberByteManipulation(int number)
 // ДО ЗАВДАННЬ 10.1, 10.2, 10.3 //
 void fillInputTxtFile(string ukrWord)
 {
-    ofstream inputFile("prjInputFile.txt");
+    ofstream inputFile("prjInputFile.txt", ios::in);
 	if (!inputFile) {
 		cout << "Неможливо відкрити файл для редагування\a" << endl;
+        inputFile.close();
 		exit(1);
 	}
 	inputFile << ukrWord << endl;
+	inputFile.close();
 }
 
 // ЗАВДАННЯ 10.1 //

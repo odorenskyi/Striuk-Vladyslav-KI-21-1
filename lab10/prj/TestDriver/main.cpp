@@ -7,6 +7,9 @@ using namespace std;
 int main()
 {
     system("chcp 65001 & cls");
-    fillInputTxtFile("Щастя");
+
+    string testWord = "Щастя";
+    fillInputTxtFile(testWord);
+    cout << "У файл prjInputFile.txt записано: \"" << testWord << "\"" << endl;
     return 0;
 }
