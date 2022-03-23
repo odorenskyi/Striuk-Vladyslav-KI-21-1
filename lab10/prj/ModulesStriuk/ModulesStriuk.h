@@ -2,6 +2,8 @@
 #define MODULESSTRIUK_H_INCLUDED
 #include <cstring>
 
+using namespace std;
+
 struct money {
     float salary;
     float fizosoba;
@@ -19,6 +21,7 @@ struct socks {
 };
 
 double s_calculation(float x, float y, float z);
+
 money salaryAndTaxesOutput(int workingHours[5]);
 socks socksSizeStandart(unsigned char ukrSoksSize);
 int numberByteManipulation(int number);
@@ -26,5 +29,7 @@ int numberByteManipulation(int number);
 void authorInfoVowelsFindWord();
 void addInfoToTxt();
 void addCalcResAndBinaryDigit();
+
+void fillInputTxtFile(string ukrWord);
 
 #endif // MODULESSTRIUK_H_INCLUDED

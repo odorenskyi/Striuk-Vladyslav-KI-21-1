@@ -116,20 +116,15 @@ int numberByteManipulation(int number)
     return bitCount;
 }
 
-string fillInputTxtFile()
+// ДО ЗАВДАННЬ 10.1, 10.2, 10.3 //
+void fillInputTxtFile(string ukrWord)
 {
     ofstream inputFile("prjInputFile.txt");
 	if (!inputFile) {
 		cout << "Неможливо відкрити файл для редагування\a" << endl;
 		exit(1);
 	}
-
-	string ukrWord;
-	cout << "Введіть довільне слово українською мовою: ";
-	cin >> ukrWord;
-
 	inputFile << ukrWord << endl;
-	return ukrWord;
 }
 
 // ЗАВДАННЯ 10.1 //
