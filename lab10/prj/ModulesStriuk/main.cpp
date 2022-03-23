@@ -235,6 +235,7 @@ void timestampInFile(string inputFileName)
     inputFile.close();
 }
 
+// ЗАВДАННЯ 10.3(1) //
 double sCalculationResInFile(float x, float y, float z)
 {
     ofstream outputFile("prjOutputFile.txt", ios::app);
@@ -243,6 +244,7 @@ double sCalculationResInFile(float x, float y, float z)
     return s_calculation(x, y, z);
 }
 
+// ЗАВДАННЯ 10.3(2) //
 void decimalToBinary(string outputFileName, int number)
 {
     ofstream outputFile(outputFileName, ios::app);
