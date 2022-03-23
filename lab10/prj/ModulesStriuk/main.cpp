@@ -178,6 +178,7 @@ int vowelsCountInFile()
 // ЗАВДАННЯ 10.2(3) //
 void findWordInPoem(string ukrWord)
 {
+    abilityToEdit();
     ofstream outputFile("prjOutputFile.txt", ios::app);
     string poemVI[4] = { "До щастя не пускає лінощів орава.",
                          "У чім воно - ніхто не знає до пуття.",
@@ -194,8 +195,28 @@ void findWordInPoem(string ukrWord)
     outputFile.close();
 }
 
-// ЗАВДАННЯ 10.3 //
-void addCalcResAndBinaryDigit()
+// ЗАВДАННЯ 10.2(1) //
+void consonantsCountInFile()
 {
+    abilityToEdit();
+    FILE* inputFile = fopen("prjInputFile.txt", "r");
+    string vowels = "АаЕеЄєИиІіЇїОоУуЮюЯя";
+    int consonantsCount = 0;
+    char symbol;
+    while(!feof(inputFile)) {
+        symbol = getc(inputFile);
+        for (int i = 0; i < 20; i++) {
+            if (symbol != vowels[i]) {
+                if ((symbol > 'а' && symbol < 'я') || (symbol > 'А' && symbol < 'Я')) {
+                    consonantsCount++;
+                    break;
+                }
+            }
+        }
+    }
+    fclose(inputFile);
 
+    ofstream inputTxtFile("prjInputFile.txt", ios::app);
+    inputTxtFile << "Кількість приголосних літер з вхідного файлу: " << consonantsCount << endl << endl;
+    inputTxtFile.close();
 }
