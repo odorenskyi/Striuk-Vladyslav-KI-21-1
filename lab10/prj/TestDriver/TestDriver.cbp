@@ -31,8 +31,6 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
-			<Add option="-finput-charset=utf-8" />
-			<Add option="-fexec-charset=utf-8" />
 			<Add directory="../ModulesStriuk" />
 		</Compiler>
 		<Linker>

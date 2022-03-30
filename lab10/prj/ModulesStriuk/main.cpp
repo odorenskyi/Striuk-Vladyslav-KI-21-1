@@ -147,7 +147,7 @@ void abilityToEdit(string outputFileName, string inputFileName)
 bool fillInputTxtFile(string inputFileName, string ukrWord)
 {
     ofstream inputFile(inputFileName, ios::out);
-	inputFile << ukrWord << endl;
+	inputFile << ukrWord << endl << endl;
 	inputFile.close();
 	return true;
 }
@@ -253,10 +253,11 @@ bool decimalToBinary(string outputFileName, unsigned int number)
     ofstream outputFile(outputFileName, ios::app);
     int binaryCels[32];
     int i;
+    unsigned int convertedNum = number;
 
-    for(i = 0; number > 0; i++) {
-        binaryCels[i] = number % 2;
-        number = number / 2;
+    for(i = 0; convertedNum > 0; i++) {
+        binaryCels[i] = convertedNum % 2;
+        convertedNum = convertedNum / 2;
     }
     outputFile << "Двійкове представлення числа " << number << " : ";
     for(i = i - 1; i >= 0; i--) {
@@ -266,4 +267,3 @@ bool decimalToBinary(string outputFileName, unsigned int number)
     outputFile.close();
     return true;
 }
-
