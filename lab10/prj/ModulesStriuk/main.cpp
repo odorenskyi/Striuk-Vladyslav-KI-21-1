@@ -171,11 +171,11 @@ int vowelsCountInFile(string outputFileName, string ukrWord)
     ofstream outputFile(outputFileName, ios::app);
     string vowels[10] = { "а", "е", "є", "и", "і", "ї", "о", "у", "ю", "я" };
     int vowelsCount = 0;
-    size_t found;
+    size_t foundVowel;
 
     for (int i = 0; i < 10; i++) {
-        found = ukrWord.find(vowels[i]);
-        if (found != string::npos) {
+        foundVowel = ukrWord.find(vowels[i]);
+        if (foundVowel != string::npos) {
             vowelsCount++;
         }
     }
@@ -185,23 +185,24 @@ int vowelsCountInFile(string outputFileName, string ukrWord)
 }
 
 // ЗАВДАННЯ 10.2(3) //
-void findWordInPoem(string outputFileName, string ukrWord)
+bool findWordInPoem(string outputFileName, string ukrWord)
 {
     ofstream outputFile(outputFileName, ios::app);
-    string poemVI[4] = { "До щастя не пускає лінощів орава.",
-                         "У чім воно - ніхто не знає до пуття.",
-                         "Навчитись радісно робити кожну справу",
-                         "Найперше правило щасливого життя" };
+    string poemVI = { "до щастя не пускає лінощів орава.\n"
+                      "у чім воно - ніхто не знає до пуття.\n"
+                      "навчитись радісно робити кожну справу\n"
+                      "найперше правило щасливого життя\n" };
+    size_t foundWord;
 
-    for (int i = 0; i < 4; i++) {
-        if (poemVI[i].find(ukrWord, 0) > 0) {
-            outputFile << "Знайдено слово \"" << ukrWord << "\"" << endl << endl;
-            outputFile.close();
-            return;
-        }
+    foundWord = poemVI.find(ukrWord);
+    if (foundWord != string::npos) {
+        outputFile << "Знайдено слово \"" << ukrWord << "\"" << endl << endl;
+        outputFile.close();
+        return true;
     }
     outputFile << "Cлово \"" << ukrWord << "\" - не знайдено" << endl << endl;
     outputFile.close();
+    return false;
 }
 
 // ЗАВДАННЯ 10.2(1) //

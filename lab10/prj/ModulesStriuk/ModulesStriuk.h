@@ -31,7 +31,7 @@ void abilityToEdit(string outputFileName, string inputFileName);
 bool fillInputTxtFile(string inputFileName, string ukrWord);
 bool authorInfo(string outputFileName);
 int vowelsCountInFile(string outputFileName, string ukrWord);
-void findWordInPoem(string outputFileName, string ukrWord);
+bool findWordInPoem(string outputFileName, string ukrWord);
 void consonantsCountInFile();
 void timestampInFile(string inputFileName);
 double sCalculationResInFile(float x, float y, float z);
