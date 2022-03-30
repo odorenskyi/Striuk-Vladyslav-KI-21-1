@@ -236,7 +236,7 @@ bool timestampInFile(string inputFileName)
 }
 
 // ЗАВДАННЯ 10.3(1) //
-double sCalculationResInFile(float x, float y, float z)
+double sCalculationResInFile(string outputFileName, float x, float y, float z)
 {
     ofstream outputFile("prjOutputFile.txt", ios::app);
     outputFile << "Результат виконання s_calculation: " << s_calculation(x, y, z) << endl << endl;

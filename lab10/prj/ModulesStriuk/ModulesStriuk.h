@@ -34,7 +34,7 @@ int vowelsCountInFile(string outputFileName, string ukrWord);
 bool findWordInPoem(string outputFileName, string ukrWord);
 int consonantsCountInFile(string inputFileName, string ukrWord);
 bool timestampInFile(string inputFileName);
-double sCalculationResInFile(float x, float y, float z);
+double sCalculationResInFile(string outputFileName, float x, float y, float z);
 void decimalToBinary(string outputFileName, int number);
 
 
