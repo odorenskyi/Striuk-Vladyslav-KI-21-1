@@ -2,6 +2,7 @@
 #include <fstream>
 #include <cmath>
 #include <cstring>
+
 #include "ModulesStriuk.h"
 
 using namespace std;
@@ -17,11 +18,12 @@ double s_calculation(float x, float y, float z)
 
 
 
+
 // ЗАВДАННЯ 9.1 //
 money salaryAndTaxesOutput(int workingHours[5])
 {
     cout << "========================================================================" << endl;
-    /// Перевірка на правильність вказання часу
+/// Перевірка на правильність вказання часу
     for (int i = 0; i < 5; i++) {
         if (workingHours[i] < 0) {
             cout << endl << "ПОМИЛКА: від\'ємне значення зарплати ! (автоматично визначається як 0)" << endl << endl;
@@ -34,7 +36,7 @@ money salaryAndTaxesOutput(int workingHours[5])
          << "ЧТ: " << workingHours[3] << endl
          << "ПТ: " << workingHours[4] << endl << endl;
 
-    /// Нарахування ЗП згідно з відпрацьованих годин
+/// Нарахування ЗП згідно з відпрацьованих годин
     int fullSalary = 0;
     for (int i = 0; i < 5; i++) {
         if (workingHours[i] <= 0)       { continue; }
@@ -42,7 +44,7 @@ money salaryAndTaxesOutput(int workingHours[5])
         else                            { fullSalary += workingHours[i] * 40 + 300; }
     }
 
-    /// Визначення податків та ЗП у кінечному результаті
+/// Визначення податків та ЗП у кінечному результаті
     money m;
     m.salary = fullSalary;
     m.fizosoba = fullSalary * 0.15;
@@ -68,13 +70,13 @@ money salaryAndTaxesOutput(int workingHours[5])
 // ЗАВДАННЯ 9.2 //
 socks socksSizeStandart(unsigned char sSize)
 {
-    /// Заверешення функції при недопустимих вхідних даних
+/// Заверешення функції при недопустимих вхідних даних
     if (sSize != 23 && sSize != 25 && sSize != 27 && sSize != 29 && sSize != 31) {
         cout << "ПОМИЛКА: Розмір шкарпеток не відповідає стандарту !" << endl;
         return {-1, -1, -1, -1};
     }
 
-    /// Виведення аналогів розміру (для спрощення коду, за знайденною закономірністю, використовуються формули)
+/// Виведення аналогів розміру (для спрощення коду, за знайденною закономірністю, використовуються формули)
     socks s;
     s.ukrSize = sSize;
     s.usSize = (sSize / 2) - 2;
@@ -90,7 +92,7 @@ socks socksSizeStandart(unsigned char sSize)
 // ЗАВДАННЯ 9.3 //
 int numberByteManipulation(int number)
 {
-    /// Завершення функції, при невідповідних до заданого діапазону чисел
+/// Завершення функції, при невідповідних до заданого діапазону чисел
     if (number < 0 || number > 7483650) {
         cout << "ПОМИЛКА: число в недопустимому діапазоні !" << endl;
         return -1;
@@ -99,13 +101,13 @@ int numberByteManipulation(int number)
     int reverseNumber = 0;
     int bitCount = 0;
 
-    /// Інвертування числа (біти, за замовчуванням, рахуються з кінця числа)
+/// Інвертування числа (біти, за замовчуванням, рахуються з кінця числа)
     for (; number; number /= 2) {
         reverseNumber = reverseNumber * 2 + number % 2;
     }
     number = reverseNumber;
 
-    /// Додавання до кількості бітів результату логічного виразу (біт не має бути рівним сьомому)
+/// Додавання до кількості бітів результату логічного виразу (біт не має бути рівним сьомому)
     int saveIndex = 0;
     for (int i = 0; i <= 31; i++) {
         if (number & (1 << i)) { saveIndex = i + 1; }
@@ -119,6 +121,7 @@ int numberByteManipulation(int number)
     }
     return bitCount;
 }
+
 
 
 
@@ -166,17 +169,14 @@ bool authorInfo(string outputFileName)
 int vowelsCountInFile(string outputFileName, string ukrWord)
 {
     ofstream outputFile(outputFileName, ios::app);
-    string vowels = "АаЕеЄєИиІіЇїОоУуЮюЯя";
+    string vowels[10] = { "а", "е", "є", "и", "і", "ї", "о", "у", "ю", "я" };
     int vowelsCount = 0;
+    size_t found;
 
-    for (int i = 0; i < ukrWord.length(); i++) {
-            cout << "lenght" << ukrWord.length() << endl;
-        for (int j = 0; j < 20; j++) {
-            if (ukrWord[i] == vowels[j]) {
-                vowelsCount++;
-                cout << "count:::" << i << "   " << vowelsCount << endl;
-                break;
-            }
+    for (int i = 0; i < 10; i++) {
+        found = ukrWord.find(vowels[i]);
+        if (found != string::npos) {
+            vowelsCount++;
         }
     }
     outputFile << "Кількість голосних літер з вхідного файлу: " << vowelsCount << endl << endl;

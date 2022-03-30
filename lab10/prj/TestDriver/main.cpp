@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstring>
 #include <conio.h>
+#include <iomanip>
+
 #include "ModulesStriuk.h"
 
 using namespace std;
@@ -13,9 +15,9 @@ int main()
 
     for(int i = 0; i < 5; i++) {
         abilityToEdit("prjOutputFile.txt", "prjInputFile.txt");
-        cout << "fillInputTxtFile - " << fillInputTxtFile("prjInputFile.txt", inputWordsArray[i]) << endl;
-        cout << "authorInfo - " << authorInfo("prjOutputFile.txt") << endl;
-        cout << "vowelsCountInFile - " << (vowelsCountInFile("prjOutputFile.txt", inputWordsArray[i]) == vowelsCount[i]);
+        cout << boolalpha << "fillInputTxtFile - " << fillInputTxtFile("prjInputFile.txt", inputWordsArray[i]) << endl;
+        cout << boolalpha << "authorInfo - " << authorInfo("prjOutputFile.txt") << endl;
+        cout << boolalpha << "vowelsCountInFile - " << (vowelsCountInFile("prjOutputFile.txt", inputWordsArray[i]) == vowelsCount[i]) << endl;
         _getch();
     }
     return 0;
