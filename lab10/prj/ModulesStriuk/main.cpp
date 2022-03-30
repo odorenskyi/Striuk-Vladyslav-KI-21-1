@@ -206,32 +206,24 @@ bool findWordInPoem(string outputFileName, string ukrWord)
 }
 
 // ЗАВДАННЯ 10.2(1) //
-void consonantsCountInFile()
+int consonantsCountInFile(string inputFileName, string ukrWord)
 {
-    FILE* inputFile = fopen("prjInputFile.txt", "r");
-    string vowels = "АаЕеЄєИиІіЇїОоУуЮюЯя";
-    int consonantsCount = 0;
-    char symbol;
+    ofstream inputTxtFile(inputFileName, ios::app);
+    string vowels[10] = { "а", "е", "є", "и", "і", "ї", "о", "у", "ю", "я" };
+    size_t foundConsonants;
 
-    while(!feof(inputFile)) {
-        symbol = getc(inputFile);
-        for (int i = 0; i < 20; i++) {
-            if (symbol != vowels[i]) {
-                if ((symbol > 'а' && symbol < 'я') || (symbol > 'А' && symbol < 'Я')) {
-                    consonantsCount++;
-                    break;
-                }
-            }
+    for (int i = 0; i < 10; i++) {
+        foundConsonants = ukrWord.find(vowels[i]);
+        if (foundConsonants != string::npos) {
+            ukrWord.erase(foundConsonants, vowels[i].length());
         }
     }
-    fclose(inputFile);
-
-    ofstream inputTxtFile("prjInputFile.txt", ios::app);
-    inputTxtFile << "Кількість приголосних літер з вхідного файлу: " << consonantsCount << endl << endl;
+    inputTxtFile << "Кількість приголосних літер з вхідного файлу: " << ukrWord.length() / 2 << endl << endl;
     inputTxtFile.close();
+    return ukrWord.length() / 2;
 }
 
-// ЗАВДАННЯ 10.2(1) //
+// ЗАВДАННЯ 10.2(2) //
 void timestampInFile(string inputFileName)
 {
     ofstream inputFile(inputFileName, ios::app);

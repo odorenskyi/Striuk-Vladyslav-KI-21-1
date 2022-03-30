@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1648637418 source:d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab10\prj\testdriver\main.cpp
+1648640582 source:d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab10\prj\testdriver\main.cpp
 	<iostream>
 	<cstring>
 	<conio.h>
+	<iomanip>
 	"ModulesStriuk.h"
 
-1648637940 d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab10\prj\modulesstriuk\modulesstriuk.h
+1648639766 d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab10\prj\modulesstriuk\modulesstriuk.h
 	<cstring>
 

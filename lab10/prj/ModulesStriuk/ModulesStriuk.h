@@ -32,7 +32,7 @@ bool fillInputTxtFile(string inputFileName, string ukrWord);
 bool authorInfo(string outputFileName);
 int vowelsCountInFile(string outputFileName, string ukrWord);
 bool findWordInPoem(string outputFileName, string ukrWord);
-void consonantsCountInFile();
+int consonantsCountInFile(string inputFileName, string ukrWord);
 void timestampInFile(string inputFileName);
 double sCalculationResInFile(float x, float y, float z);
 void decimalToBinary(string outputFileName, int number);
