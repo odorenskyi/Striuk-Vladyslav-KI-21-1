@@ -35,7 +35,7 @@ bool findWordInPoem(string outputFileName, string ukrWord);
 int consonantsCountInFile(string inputFileName, string ukrWord);
 bool timestampInFile(string inputFileName);
 double sCalculationResInFile(string outputFileName, float x, float y, float z);
-void decimalToBinary(string outputFileName, int number);
+bool decimalToBinary(string outputFileName, unsigned int number);
 
 
 #endif // MODULESSTRIUK_H_INCLUDED

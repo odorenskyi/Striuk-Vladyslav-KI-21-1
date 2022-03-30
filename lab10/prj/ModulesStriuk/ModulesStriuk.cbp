@@ -36,7 +36,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-finput-charset=utf-8" />
-			<Add option="-fexec-charset=cp1251" />
+			<Add option="-fexec-charset=utf-8" />
 		</Compiler>
 		<Unit filename="ModulesStriuk.h" />
 		<Unit filename="main.cpp">

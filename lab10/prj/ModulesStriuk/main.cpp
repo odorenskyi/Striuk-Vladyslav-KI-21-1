@@ -245,8 +245,11 @@ double sCalculationResInFile(string outputFileName, float x, float y, float z)
 }
 
 // ЗАВДАННЯ 10.3(2) //
-void decimalToBinary(string outputFileName, int number)
+bool decimalToBinary(string outputFileName, unsigned int number)
 {
+    if (number <= 0) {
+        return false;
+    }
     ofstream outputFile(outputFileName, ios::app);
     int binaryCels[32];
     int i;
@@ -261,5 +264,6 @@ void decimalToBinary(string outputFileName, int number)
     }
     outputFile << endl << endl;
     outputFile.close();
+    return true;
 }
 

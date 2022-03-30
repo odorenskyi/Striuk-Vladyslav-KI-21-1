@@ -44,6 +44,9 @@ int main()
              << "sCalculationResInFile - "
              << (sCalculationResInFile("prjOutputFile.txt", sCalcX[i], sCalcY[i], sCalcZ[i]) <= expectedResult[i] + 0.005)
              << endl;
+        cout << boolalpha
+             << "decimalToBinary - " << decimalToBinary("prjOutputFile.txt", naturalDigit[i])
+             << endl;
 
         _getch();
     }
