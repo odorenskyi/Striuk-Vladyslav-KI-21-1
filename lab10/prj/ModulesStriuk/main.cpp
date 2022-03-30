@@ -2,6 +2,7 @@
 #include <fstream>
 #include <cmath>
 #include <cstring>
+#include <ctime>
 
 #include "ModulesStriuk.h"
 
@@ -224,11 +225,14 @@ int consonantsCountInFile(string inputFileName, string ukrWord)
 }
 
 // ЗАВДАННЯ 10.2(2) //
-void timestampInFile(string inputFileName)
+bool timestampInFile(string inputFileName)
 {
     ofstream inputFile(inputFileName, ios::app);
-    inputFile << "Дата та час дозапису інформаціїї: " << __TIMESTAMP__ << endl << endl;
+    time_t rawtime;
+    time(&rawtime);
+    inputFile << "Дата та час дозапису інформаціїї: " << ctime(&rawtime) << endl << endl;
     inputFile.close();
+    return true;
 }
 
 // ЗАВДАННЯ 10.3(1) //

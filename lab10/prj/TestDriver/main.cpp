@@ -31,6 +31,9 @@ int main()
         cout << boolalpha
              << "consonantsCountInFile - " << (consonantsCountInFile("prjInputFile.txt", inputWordsArray[i]) == consonantsCount[i])
              << endl;
+         cout << boolalpha
+             << "consonantsCountInFile - " << timestampInFile("prjInputFile.txt")
+             << endl;
         _getch();
     }
     return 0;
