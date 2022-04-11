@@ -21,8 +21,6 @@ struct regEnrollment {
     regEnrollment *ptr;
 };
 
-regEnrollment defaultEnroll = { "Іван", "Іванов", "Іванович", "Toyota", 2012, 12, 12, 2022, "АА0000АА", "Немає лобового скла", NULL };
-
 std::vector <regEnrollment*> fullRegister;
 
 #endif // STRUCT_TYPE_PROJECT_1_H_INCLUDED
