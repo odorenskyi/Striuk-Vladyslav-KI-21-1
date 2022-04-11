@@ -34,6 +34,12 @@
 				</Linker>
 			</Target>
 		</Build>
+		<Compiler>
+			<Add directory="../../prj" />
+		</Compiler>
+		<Linker>
+			<Add directory="../../prj" />
+		</Linker>
 		<Unit filename="ModulesStriuk.h" />
 		<Unit filename="main.cpp">
 			<Option compilerVar="CC" />
