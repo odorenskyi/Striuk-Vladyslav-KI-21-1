@@ -1,7 +1,7 @@
 #ifndef STRUCT_TYPE_PROJECT_1_H_INCLUDED
 #define STRUCT_TYPE_PROJECT_1_H_INCLUDED
 
-#include <cstring>
+#include <string>
 #include <vector>
 
 struct regEnrollment {
