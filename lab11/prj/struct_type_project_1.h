@@ -21,6 +21,4 @@ struct regEnrollment {
     regEnrollment *ptr;
 };
 
-std::vector <regEnrollment*> fullRegister;
-
 #endif // STRUCT_TYPE_PROJECT_1_H_INCLUDED
