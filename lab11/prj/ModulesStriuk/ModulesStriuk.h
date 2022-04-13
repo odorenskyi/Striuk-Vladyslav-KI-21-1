@@ -6,7 +6,11 @@
 #include <fstream>
 #include <iostream>
 
+using namespace std;
+
+vector <regEnrollment*> getFullRegister();
 regEnrollment *initilaizeRoot();
 regEnrollment *autoUploadFromFile(regEnrollment *root);
+
 
 #endif // MODULESSTRIUK_H_INCLUDED

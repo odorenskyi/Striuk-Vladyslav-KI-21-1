@@ -2,59 +2,66 @@
 
 using namespace std;
 
-/// Запис за замовчуванням ///
+vector <regEnrollment*> fullRegister;
+vector <regEnrollment*> getFullRegister() { return fullRegister; }
+
+/// ����� �� ������������� ///
 regEnrollment *initilaizeRoot()
 {
     regEnrollment *regEn = new regEnrollment;
 
-    regEn->firstName = "Іван";
-    regEn->lastName = "Іванов";
-    regEn->patronymic = "Іванович";
+    regEn->firstName = "����";
+    regEn->lastName = "������";
+    regEn->patronymic = "��������";
     regEn->carBrand = "Toyota";
     regEn->gradYear = 2012;
     regEn->dateDay = 12;
     regEn->dateMonth = 12;
     regEn->dateYear = 2022;
-    regEn->govNumber = "АА0000АА";
-    regEn->additions = "Немає лобового скла";
+    regEn->govNumber = "��0000��";
+    regEn->additions = "���� �������� ����";
     regEn->ptr = NULL;
 
     return(regEn);
 }
 
-/// Автоматичне завантаження бази данних з файлу ///
+/// ����������� ������������ ���� ������ � ����� ///
 regEnrollment *autoUploadFromFile(regEnrollment *root)
 {
-    fullRegister.clear();                                               // Очищення вмісту вектора (так надо)
-    regEnrollment *regEn = root;                                        // Локальний вказівник на перший елемент реєстру
-    ifstream inFile("RegisterDataBase.dat", ios::binary | ios::in);
+    regEnrollment *regEn = root;
+    fstream inFile("RegisterDataBase.dat", ios::binary | ios::in | ios::out);
+    inFile.seekg(0, ios::end);
 
-    if (inFile.is_open() == false) {
-        cout << "Файл з даними не існує, або не вдалося знайти" << endl
-             << "Створення нового та запис інформації за замовчуванням..." << endl;
-        inFile.close();
+    if (inFile.is_open() == false || inFile.tellg() == 0) {
+        cout << "���� � ������ �� ����, ��� ���� �������" << endl
+             << "��������� ������ ��/��� ����� ���������� �� �������������..." << endl;
+        fullRegister.clear();
+        fullRegister.push_back(initilaizeRoot());
+        inFile.write(reinterpret_cast<char*>(&fullRegister), fullRegister.size()*sizeof(regEnrollment));
+        //inFile.write((char*)&fullRegister[0], sizeof(fullRegister));
+    }
+    cout << "������������ ����������..." << endl;
 
-        fullRegister[0] = initilaizeRoot();                             // Ініціалізація першого запису за замовчуванням
-        ofstream outFile("RegisterDataBase.dat", ios::binary | ios::out);
-        outFile.write((char*)&fullRegister, sizeof(fullRegister));      // Запис вектора у файл
-        outFile.close();
-    }
-    else {
-        inFile.read((char*)&fullRegister, sizeof(fullRegister));        // Зчитування вектору з файлу
-        inFile.close();
-        if (fullRegister.empty()) {                                     // Якщо вектор пустий, ініціалізувати перший запис за замовчуванням
-            fullRegister[0] = initilaizeRoot();
-        }
-    }
-    regEn = fullRegister[0];                                            // Присвоєння першого елемента до вказівника
-    if (regEn->ptr != NULL) {                                           // Завершити виконання, якщо це єдиний елемент
+
+    inFile.seekg(0, ios::end);
+    int inFileSize = inFile.tellg();
+    size_t structAmount = inFileSize / sizeof(regEnrollment);
+    fullRegister.clear();
+
+    inFile.read(reinterpret_cast<char*>(&fullRegister[0]), structAmount * sizeof(regEnrollment));
+    //inFile.read((char*)&fullRegister, sizeof(fullRegister));
+    inFile.close();
+
+    regEn = fullRegister[0]; /// BUG (0xC0000005)
+    if (regEn->ptr != NULL) {
         for (unsigned int i = 1; i < fullRegister.size(); i++) {
-            regEn->ptr = fullRegister[i];                               // Замінити вказівник в поточній структурі на новий структурний ел.
-            regEn = regEn->ptr;                                         // Переприсвоїти локальний вказівник значенням вказівника в ньому
+            regEn->ptr = fullRegister[i];
+            regEn = regEn->ptr;
             if (fullRegister[i]->ptr == NULL) {
-                break;                                                  // Якщо останній елемент - завершити виконання
+                break;
             }
         }
     }
-    return(root);                                                       // Функція повертає вказівник на перший елемент динамічної структури
+    cout << "���������� ����������� ������" << endl;
+    return(root);
 }
