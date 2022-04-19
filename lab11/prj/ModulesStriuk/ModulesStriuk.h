@@ -8,9 +8,9 @@
 
 using namespace std;
 
-vector <regEnrollment*> getFullRegister();
-regEnrollment *initilaizeRoot();
-regEnrollment *autoUploadFromFile(regEnrollment *root);
+regEnrollment* initializeDefaultRoot(fstream &file);
+void readFromFile(fstream &file, regEnrollment *rootNode);
+void clearData(regEnrollment *rootNode);
 
 
 #endif // MODULESSTRIUK_H_INCLUDED
