@@ -2,21 +2,21 @@
 #define STRUCT_TYPE_PROJECT_1_H_INCLUDED
 
 #include <string>
-#include <vector>
 
 struct regEnrollment {
-    std::string firstName;
-    std::string lastName;
-    std::string patronymic;
+    char *firstName;
+    char *lastName;
+    char *patronymic;
 
-    std::string carBrand;
+    char *carBrand;
 
-    unsigned short int gradYear;
-    unsigned char dateDay;
-    unsigned char dateMonth;
-    unsigned short int dateYear;
-    std::string govNumber;
-    std::string additions;
+    char *gradYear;
+    char *dateDay;
+    char *dateMonth;
+    char *dateYear;
+
+    char *govNumber;
+    char *additions;
 
     regEnrollment *ptr;
 };
