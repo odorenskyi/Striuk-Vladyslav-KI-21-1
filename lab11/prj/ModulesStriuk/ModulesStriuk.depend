@@ -1,13 +1,13 @@
 # depslib dependency file v1.0
-1649881015 source:d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab11\prj\modulesstriuk\main.cpp
+1650399411 source:d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab11\prj\modulesstriuk\main.cpp
 	"ModulesStriuk.h"
 
-1649880485 d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab11\prj\modulesstriuk\modulesstriuk.h
+1650399047 d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab11\prj\modulesstriuk\modulesstriuk.h
 	"struct_type_project_1.h"
 	<fstream>
 	<iostream>
-
-1649881028 d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab11\prj\struct_type_project_1.h
 	<string>
-	<vector>
+
+1650399511 d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab11\prj\struct_type_project_1.h
+	<string>
 

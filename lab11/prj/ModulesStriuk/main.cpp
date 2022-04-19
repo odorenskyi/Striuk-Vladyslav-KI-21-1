@@ -18,32 +18,32 @@ regEnrollment* initializeDefaultRoot(fstream &file)
     regEn->additions = (char*)"Without front left door";    // 255 bytes
     regEn->ptr = nullptr;
 
-    file.write(&regEn->firstName[0], 35);
-    file.write(&regEn->lastName[0], 35);
-    file.write(&regEn->patronymic[0], 35);
-    file.write(&regEn->carBrand[0], 35);
-    file.write(&regEn->gradYear[0], 4);
-    file.write(&regEn->dateDay[0], 2);
-    file.write(&regEn->dateMonth[0], 2);
-    file.write(&regEn->dateYear[0], 4);
-    file.write(&regEn->govNumber[0], 8);
-    file.write(&regEn->additions[0], 255);
+    file.write(&regEn->firstName[0], PROPER_NAME_SIZE);
+    file.write(&regEn->lastName[0], PROPER_NAME_SIZE);
+    file.write(&regEn->patronymic[0], PROPER_NAME_SIZE);
+    file.write(&regEn->carBrand[0], PROPER_NAME_SIZE);
+    file.write(&regEn->gradYear[0], YEAR_STIRNG_SIZE);
+    file.write(&regEn->dateDay[0], DATE_STRING_SIZE);
+    file.write(&regEn->dateMonth[0], DATE_STRING_SIZE);
+    file.write(&regEn->dateYear[0], YEAR_STIRNG_SIZE);
+    file.write(&regEn->govNumber[0], GOV_NUMBER_SIZE);
+    file.write(&regEn->additions[0], LARGE_TXT_SIZE);
 
     return(regEn);
 }
 
 void readFromFile(fstream &file, regEnrollment *rootNode)
 {
-    rootNode->firstName = new char(35);
-    rootNode->lastName = new char(35);
-    rootNode->patronymic = new char(35);
-    rootNode->carBrand = new char(35);
-    rootNode->gradYear = new char(4);
-    rootNode->dateDay = new char(2);
-    rootNode->dateMonth = new char(2);
-    rootNode->dateYear = new char(4);
-    rootNode->govNumber = new char(8);
-    rootNode->additions = new char(255);
+    rootNode->firstName = new char(PROPER_NAME_SIZE);
+    rootNode->lastName = new char(PROPER_NAME_SIZE);
+    rootNode->patronymic = new char(PROPER_NAME_SIZE);
+    rootNode->carBrand = new char(PROPER_NAME_SIZE);
+    rootNode->gradYear = new char(YEAR_STIRNG_SIZE);
+    rootNode->dateDay = new char(DATE_STRING_SIZE);
+    rootNode->dateMonth = new char(DATE_STRING_SIZE);
+    rootNode->dateYear = new char(YEAR_STIRNG_SIZE);
+    rootNode->govNumber = new char(GOV_NUMBER_SIZE);
+    rootNode->additions = new char(LARGE_TXT_SIZE);
     rootNode->ptr = nullptr;
 
     if (file.peek() == EOF) {
@@ -51,16 +51,16 @@ void readFromFile(fstream &file, regEnrollment *rootNode)
         return;
     }
 
-    file.read(&rootNode->firstName[0], 35);
-    file.read(&rootNode->lastName[0], 35);
-    file.read(&rootNode->patronymic[0], 35);
-    file.read(&rootNode->carBrand[0], 35);
-    file.read(&rootNode->gradYear[0], 4);
-    file.read(&rootNode->dateDay[0], 2);
-    file.read(&rootNode->dateMonth[0], 2);
-    file.read(&rootNode->dateYear[0], 4);
-    file.read(&rootNode->govNumber[0], 8);
-    file.read(&rootNode->additions[0], 255);
+    file.read(&rootNode->firstName[0], PROPER_NAME_SIZE);
+    file.read(&rootNode->lastName[0], PROPER_NAME_SIZE);
+    file.read(&rootNode->patronymic[0], PROPER_NAME_SIZE);
+    file.read(&rootNode->carBrand[0], PROPER_NAME_SIZE);
+    file.read(&rootNode->gradYear[0], YEAR_STIRNG_SIZE);
+    file.read(&rootNode->dateDay[0], DATE_STRING_SIZE);
+    file.read(&rootNode->dateMonth[0], DATE_STRING_SIZE);
+    file.read(&rootNode->dateYear[0], YEAR_STIRNG_SIZE);
+    file.read(&rootNode->govNumber[0], GOV_NUMBER_SIZE);
+    file.read(&rootNode->additions[0], LARGE_TXT_SIZE);
 
     if (file.peek() != -1) {
         rootNode->ptr = new regEnrollment;
@@ -74,4 +74,23 @@ void clearData(regEnrollment *rootNode)
         clearData(rootNode->ptr);
     }
     delete (rootNode);
+}
+
+void searchInDatabase(regEnrollment *rootNode)
+{
+    regEnrollment *bufEnrollment = rootNode;
+    string bufString;
+
+    cout << "Enter government number, which you wanna find: ";
+    getline(cin, bufString);
+    bufString.substr(0, GOV_NUMBER_SIZE);
+    const char *governmentNum = bufString.c_str();
+
+    do {
+        if (governmentNum == bufEnrollment->govNumber) {
+            cout << bufEnrollment->firstName << " " << bufEnrollment->lastName << " " << bufEnrollment->patronymic << ": "
+                 << bufEnrollment->govNumber << endl;
+        }
+        bufEnrollment = bufEnrollment->ptr;
+    } while (bufEnrollment != nullptr);
 }
