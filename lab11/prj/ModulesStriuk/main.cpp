@@ -68,14 +68,6 @@ void readFromFile(fstream &file, regEnrollment *rootNode)
     }
 }
 
-void clearData(regEnrollment *rootNode)
-{
-    if (rootNode->ptr != nullptr) {
-        clearData(rootNode->ptr);
-    }
-    delete (rootNode);
-}
-
 void searchInDatabase(regEnrollment *rootNode)
 {
     regEnrollment *bufEnrollment = rootNode;

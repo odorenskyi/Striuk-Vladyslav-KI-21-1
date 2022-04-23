@@ -11,7 +11,6 @@ using namespace std;
 
 regEnrollment* initializeDefaultRoot(fstream &file);
 void readFromFile(fstream &file, regEnrollment *rootNode);
-void clearData(regEnrollment *rootNode);
 void searchInDatabase(regEnrollment *rootNode);
 
 
