@@ -39,12 +39,13 @@ void searchInDatabase(regEnrollment *rootNode)
     string bufString;
 
     cout << "Enter government number, which you wanna find: ";
-    getline(cin, bufString);
+    cin >> bufString;
     bufString.substr(0, GOV_NUMBER_SIZE);
-    const char *governmentNum = bufString.c_str();
 
     do {
-        if (governmentNum == bufEnrollment->govNumber) {
+        string bufGovNumber = bufEnrollment->govNumber;
+        size_t foundStr = bufGovNumber.find(bufString);
+        if (foundStr != string::npos) {
             cout << bufEnrollment->firstName << " " << bufEnrollment->lastName << " " << bufEnrollment->patronymic << ": "
                  << bufEnrollment->govNumber << endl;
         }
