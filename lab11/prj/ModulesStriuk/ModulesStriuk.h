@@ -6,12 +6,12 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <cstring>
 
 using namespace std;
 
 regEnrollment* initializeDefaultRoot(fstream &file);
 void readFromFile(fstream &file, regEnrollment *rootNode);
 void searchInDatabase(regEnrollment *rootNode);
-
 
 #endif // MODULESSTRIUK_H_INCLUDED
