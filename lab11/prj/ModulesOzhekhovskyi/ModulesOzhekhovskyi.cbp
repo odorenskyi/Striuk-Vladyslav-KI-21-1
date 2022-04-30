@@ -35,6 +35,12 @@
 				</Linker>
 			</Target>
 		</Build>
+		<Compiler>
+			<Add directory="../../prj" />
+		</Compiler>
+		<Linker>
+			<Add directory="../../prj" />
+		</Linker>
 		<Unit filename="ModulesOzhekhovskyi.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
