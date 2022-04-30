@@ -31,7 +31,20 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add directory="../ModulesStriuk" />
+			<Add directory="../ModulesBaramba" />
+			<Add directory="../ModulesOzhekhovskyi" />
+			<Add directory="../../prj" />
 		</Compiler>
+		<Linker>
+			<Add library="../ModulesStriuk/bin/Debug/libModulesStriuk.a" />
+			<Add library="../ModulesBaramba/bin/Debug/libModulesBaramba.a" />
+			<Add library="../ModulesOzhekhovskyi/bin/Debug/libModulesOzhekhovskyi.a" />
+			<Add directory="../ModulesStriuk" />
+			<Add directory="../ModulesBaramba" />
+			<Add directory="../ModulesOzhekhovskyi" />
+			<Add directory="../../prj" />
+		</Linker>
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
