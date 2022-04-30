@@ -1,12 +1,36 @@
 #include <iostream>
-#include <windows.h>
-#include <conio.h>
 
 #include "ModulesStriuk.h"
 #include "ModulesBaramba.h"
 #include "ModulesOzhekhovskyi.h"
 
 using namespace std;
+
+int fileCheckAndRead(fstream &dataFile)
+{
+    dataFile.seekg(0);
+    if (dataFile.is_open() == false) {
+        cout << "Could not open the data file! Exit program..." << endl;
+        return 1;
+    }
+    if (dataFile.peek() == EOF) {
+        cout << "File is empty! Initializing default enrollment" << endl;
+        return 2;
+    }
+    else { return 3; }
+}
+
+void readFromFileToPointers(fstream &dataFile, regEnrollment *rootNode)
+{
+    dataFile.seekg(0);
+    regEnrollment *bufNode = rootNode;
+    readFromFile(dataFile, bufNode);
+    dataFile.seekg(0);
+
+    cout << "====================================" << endl
+         << "|     <<< Reading complete >>>     |" << endl
+         << "====================================" << endl << endl;
+}
 
 void actionMenu(fstream &dataFile, fstream &txtFile, regEnrollment *root)
 {
@@ -38,24 +62,20 @@ void actionMenu(fstream &dataFile, fstream &txtFile, regEnrollment *root)
 
 int main()
 {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
+    system("chcp 1251 & cls");
 
     fstream dataFile("RegisterDataBase.dat", ios::binary | ios::in | ios::out);
     fstream txtFile("TextFile.txt", ios::out);
-    dataFile.seekg(0);
-    txtFile.seekg(0);
 
-    if (dataFile.is_open() == false || dataFile.tellg() == 0) {
-        cout << "Could not open the data file! Exit program..." << endl;
-        return 0;
-    }
+    regEnrollment *rootNode;
 
-    regEnrollment *rootNode = new regEnrollment;
-    regEnrollment *bufNode = rootNode;
-    readFromFile(dataFile, bufNode);
-    cout << "<<< Reading complete >>>" << endl << endl;
+    if      (fileCheckAndRead(dataFile) == 1) { return 0; }
+    else if (fileCheckAndRead(dataFile) == 2) { rootNode = initializeDefaultRoot(dataFile); }
+    else if (fileCheckAndRead(dataFile) == 3) { rootNode = new regEnrollment; }
+
+    readFromFileToPointers(dataFile, rootNode);
 
     actionMenu(dataFile, txtFile, rootNode);
+
     return 0;
 }
