@@ -8,9 +8,7 @@
 
 using namespace std;
 
-void writeToRegistData(fstream &file, regEnrollment *node);
-void writeToFile(fstream &file, regEnrollment *node);
-void writeToConsole(regEnrollment *node);
-
+void writeToRegistData(fstream &file, regEnrollment *regEn);
+void dataOutput(fstream &file, regEnrollment *regEn, int action);
 
 #endif // MODULESBARAMBA_H_INCLUDED
