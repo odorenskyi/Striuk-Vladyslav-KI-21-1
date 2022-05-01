@@ -94,7 +94,7 @@ void addElement(regEnrollment *rootNode)
     strcpy(newElement->additions, inputAdditions(additions, "Enter additions informations: ").c_str());
 }
 
-void deleteElement(regEnrollment *root)
+void deleteElement(regEnrollment *&root)
 {
     regEnrollment *findNode = root;
     regEnrollment *buffer = nullptr;

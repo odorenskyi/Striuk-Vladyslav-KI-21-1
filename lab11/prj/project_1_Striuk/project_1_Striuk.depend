@@ -21,8 +21,9 @@
 	<iomanip>
 	"struct_type_project_1.h"
 
-1651302024 d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab11\prj\modulesozhekhovskyi\modulesozhekhovskyi.h
+1651388946 d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab11\prj\modulesozhekhovskyi\modulesozhekhovskyi.h
 	"struct_type_project_1.h"
 	<iostream>
+	<string>
 	<cstring>
 
