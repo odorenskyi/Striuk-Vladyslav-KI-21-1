@@ -2,6 +2,7 @@
 #define MODULESSTRIUK_H_INCLUDED
 #include <string>
 #include <cstring>
+#include <sstream>
 
 #define PI 3.14159265359
 
@@ -16,8 +17,8 @@ public:
     float getPipeRadius() { return pipeRadius; }
     float getPipeSquare() { return pipeSquare(pipeHeight, pipeRadius); }
 
-    void setPipeHeight(string height);
-    void setPipeRadius(string radius);
+    void setPipeHeight(string height, float&f);
+    void setPipeRadius(string radius, float&f);
 
 private:
     float pipeHeight;
