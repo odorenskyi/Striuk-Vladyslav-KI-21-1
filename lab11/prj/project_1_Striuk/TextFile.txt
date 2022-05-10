@@ -1,0 +1,44 @@
+ ----------------------------------------------------------------------------------
+|First name       |Ivan                                                            |
+|Last name        |Ivanov                                                          |
+|Patronymic       |Ivanovich                                                       |
+|Car brand        |Toyota                                                          |
+|Graduation year  |2012                                                            |
+|Registration day |12.12.2022                                                      |
+|Registration code|AA0000AA                                                        |
+|Additions        |Without front left door                                         |
+ ----------------------------------------------------------------------------------
+|                                                                                  |
+ ----------------------------------------------------------------------------------
+|First name       |Vladislav                                                       |
+|Last name        |Striuk                                                          |
+|Patronymic       |Evgeniyovych                                                    |
+|Car brand        |Lamborgini                                                      |
+|Graduation year  |2020                                                            |
+|Registration day |04.09.2020                                                      |
+|Registration code|BA7777AB                                                        |
+|Additions        |-                                                               |
+ ----------------------------------------------------------------------------------
+|                                                                                  |
+ ----------------------------------------------------------------------------------
+|First name       |Volodymyr                                                       |
+|Last name        |Chornuy                                                         |
+|Patronymic       |Maksymovych                                                     |
+|Car brand        |Mercedes                                                        |
+|Graduation year  |2012                                                            |
+|Registration day |15.01.2014                                                      |
+|Registration code|AK9845BB                                                        |
+|Additions        |-                                                               |
+ ----------------------------------------------------------------------------------
+|                                                                                  |
+ ----------------------------------------------------------------------------------
+|First name       |Test1                                                           |
+|Last name        |Test1                                                           |
+|Patronymic       |Test1                                                           |
+|Car brand        |TestCar1                                                        |
+|Graduation year  |2008                                                            |
+|Registration day |07.03.2021                                                      |
+|Registration code|BB1111BB                                                        |
+|Additions        |infoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinf |
+|                 |                                                                |
+ ----------------------------------------------------------------------------------
