@@ -4,8 +4,8 @@ using namespace std;
 
 ClassLab12_Striuk::ClassLab12_Striuk()
 {
-    pipeHeight = 1.0;
-    pipeRadius = 1.0;
+    pipeHeight = 0.01;
+    pipeRadius = 0.01;
 }
 
 void ClassLab12_Striuk::setPipeHeight(string height, float&f)
@@ -13,8 +13,11 @@ void ClassLab12_Striuk::setPipeHeight(string height, float&f)
     char junk;
     height = regex_replace(height, regex(","), ".");
     stringstream ss(height);
-    if (ss >> f && !(ss >> junk))
-        pipeHeight = stof(height);
+    if (ss >> f && !(ss >> junk)) {
+        if (stof(height) >= 0.01 && stof(height) <= 44) {
+            pipeHeight = stof(height);
+        }
+    }
 }
 
 void ClassLab12_Striuk::setPipeRadius(string radius, float&f)
@@ -22,6 +25,9 @@ void ClassLab12_Striuk::setPipeRadius(string radius, float&f)
     char junk;
     radius = regex_replace(radius, regex(","), ".");
     stringstream ss(radius);
-    if (ss >> f && !(ss >> junk))
-        pipeRadius = stof(radius);
+    if (ss >> f && !(ss >> junk)) {
+        if (stof(radius) >= 0.01 && stof(radius) <= 44) {
+            pipeRadius = stof(radius);
+        }
+    }
 }
