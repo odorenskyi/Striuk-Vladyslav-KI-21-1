@@ -1,6 +1,11 @@
 #ifndef ADDITIONFUNCTIONS_H_INCLUDED
 #define ADDITIONFUNCTIONS_H_INCLUDED
 
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
 bool fileInDirectory()
 {
     string cpp = __FILE__;
