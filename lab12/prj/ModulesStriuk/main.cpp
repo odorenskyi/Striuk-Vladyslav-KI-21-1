@@ -14,7 +14,7 @@ void ClassLab12_Striuk::setPipeHeight(string height, float&f)
     height = regex_replace(height, regex(","), ".");
     stringstream ss(height);
     if (ss >> f && !(ss >> junk)) {
-        if (stof(height) >= 0.01 && stof(height) <= 44) {
+        if (stof(height) >= 0.01 && stof(height) <= 420) {
             pipeHeight = stof(height);
         }
     }
