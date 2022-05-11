@@ -1,8 +1,10 @@
 #ifndef MODULESSTRIUK_H_INCLUDED
 #define MODULESSTRIUK_H_INCLUDED
+
 #include <string>
 #include <cstring>
 #include <sstream>
+#include <regex>
 
 #define PI 3.14159265359
 
