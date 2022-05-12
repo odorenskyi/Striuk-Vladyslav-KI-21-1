@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -12,10 +13,24 @@ bool fileInDirectory()
     size_t found = cpp.find("\\lab12\\prj");
 
     if (found == string::npos) {
+        ofstream resFile("../../TestSuite/TestResults.txt");
+        resFile << "Встановлені вимоги порядку виконання лабораторної роботи порушено!" << endl;
         for (int i = 0; i < 100; i++) {
             cout << "\a";
-            return false;
         }
+        resFile.close();
+        return false;
+    }
+    return true;
+}
+
+bool filesIsOpen(ofstream &wfile, ifstream &rfile)
+{
+    if (!rfile.is_open() || !wfile.is_open() || !rfile || !wfile) {
+        ofstream resFile("../../TestSuite/TestResults.txt");
+        resFile << "Встановлені вимоги порядку виконання лабораторної роботи порушено!" << endl;
+        resFile.close();
+        return false;
     }
     return true;
 }

@@ -37,6 +37,7 @@
 			<Add library="../ModulesStriuk/bin/Debug/libModulesStriuk.a" />
 			<Add directory="../ModulesStriuk" />
 		</Linker>
+		<Unit filename="AdditionFunctions.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
