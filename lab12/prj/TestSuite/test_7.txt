@@ -1,2 +1,0 @@
-pipeHeight: 45 12.2
-pipeRadius: 3.1 23

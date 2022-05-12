@@ -1,2 +1,0 @@
-pipeHeight: word
-pipeRadius: word
