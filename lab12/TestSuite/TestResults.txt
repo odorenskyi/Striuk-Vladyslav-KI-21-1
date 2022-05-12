@@ -1,0 +1,80 @@
+----------------------------------------------------
+| TEST CASE  1                                     |
+| (input)    Pipe height:                 0.01 м   |
+| (input)    Pipe radius:                 0.01 м   |
+| (output)   Pipe square:             0.000628 м^2 |
+| (expected) Pipe square:             0.000628 м^2 |
+| TEST CASE RESULT:                       true     |
+----------------------------------------------------
+----------------------------------------------------
+| TEST CASE  2                                     |
+| (input)    Pipe height:                 0.01 м   |
+| (input)    Pipe radius:                 0.01 м   |
+| (output)   Pipe square:             0.000628 м^2 |
+| (expected) Pipe square:             0.000628 м^2 |
+| TEST CASE RESULT:                       true     |
+----------------------------------------------------
+----------------------------------------------------
+| TEST CASE  3                                     |
+| (input)    Pipe height:                 12.9 м   |
+| (input)    Pipe radius:                23.78 м   |
+| (output)   Pipe square:          1927.442505 м^2 |
+| (expected) Pipe square:          1927.442505 м^2 |
+| TEST CASE RESULT:                       true     |
+----------------------------------------------------
+----------------------------------------------------
+| TEST CASE  4                                     |
+| (input)    Pipe height:                 0.01 м   |
+| (input)    Pipe radius:                 0.01 м   |
+| (output)   Pipe square:             0.000628 м^2 |
+| (expected) Pipe square:             0.000628 м^2 |
+| TEST CASE RESULT:                       true     |
+----------------------------------------------------
+----------------------------------------------------
+| TEST CASE  5                                     |
+| (input)    Pipe height:                 0.01 м   |
+| (input)    Pipe radius:                 0.01 м   |
+| (output)   Pipe square:             0.000628 м^2 |
+| (expected) Pipe square:             0.000628 м^2 |
+| TEST CASE RESULT:                       true     |
+----------------------------------------------------
+----------------------------------------------------
+| TEST CASE  6                                     |
+| (input)    Pipe height:                  420 м   |
+| (input)    Pipe radius:                   44 м   |
+| (output)   Pipe square:        116113.265625 м^2 |
+| (expected) Pipe square:        116113.265625 м^2 |
+| TEST CASE RESULT:                       true     |
+----------------------------------------------------
+----------------------------------------------------
+| TEST CASE  7                                     |
+| (input)    Pipe height:                 0.01 м   |
+| (input)    Pipe radius:                 0.01 м   |
+| (output)   Pipe square:             0.000628 м^2 |
+| (expected) Pipe square:             0.000628 м^2 |
+| TEST CASE RESULT:                       true     |
+----------------------------------------------------
+----------------------------------------------------
+| TEST CASE  8                                     |
+| (input)    Pipe height:                5.128 м   |
+| (input)    Pipe radius:                34.41 м   |
+| (output)   Pipe square:          1108.696167 м^2 |
+| (expected) Pipe square:          1108.696167 м^2 |
+| TEST CASE RESULT:                       true     |
+----------------------------------------------------
+----------------------------------------------------
+| TEST CASE  9                                     |
+| (input)    Pipe height:               250.78 м   |
+| (input)    Pipe radius:                 34.1 м   |
+| (output)   Pipe square:         53731.273438 м^2 |
+| (expected) Pipe square:         53731.273438 м^2 |
+| TEST CASE RESULT:                       true     |
+----------------------------------------------------
+----------------------------------------------------
+| TEST CASE 10                                     |
+| (input)    Pipe height:                  0.9 м   |
+| (input)    Pipe radius:                 0.03 м   |
+| (output)   Pipe square:             0.169646 м^2 |
+| (expected) Pipe square:             0.169646 м^2 |
+| TEST CASE RESULT:                       true     |
+----------------------------------------------------

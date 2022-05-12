@@ -1,0 +1,30 @@
+pipeHeight: 2.7e3
+pipeRadius: 1.5e400
+pipeSquare: 0.000628
+pipeHeight: word
+pipeRadius: word
+pipeSquare: 0.000628
+pipeHeight: 12,90
+pipeRadius: 23,78
+pipeSquare: 1927.442505
+pipeHeight: -5
+pipeRadius: -8
+pipeSquare: 0.000628
+pipeHeight: 421
+pipeRadius: 45
+pipeSquare: 0.000628
+pipeHeight: 420.0
+pipeRadius: 44.0
+pipeSquare: 116113.265625
+pipeHeight: 45 12.2
+pipeRadius: 3.1 23
+pipeSquare: 0.000628
+pipeHeight: 5.128
+pipeRadius: 34.41
+pipeSquare: 1108.696167
+pipeHeight: 250.78
+pipeRadius: 34.1
+pipeSquare: 53731.273438
+pipeHeight: 0,9
+pipeRadius: 0,03
+pipeSquare: 0.169646
