@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1652348312 source:d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab12\prj\teacher\main.cpp
+1652348589 source:d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab12\prj\teacher\main.cpp
 	"ModulesStriuk.h"
 	"AdditionFunctions.h"
 
@@ -9,8 +9,14 @@
 	<sstream>
 	<regex>
 
-1652348499 d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab12\prj\teacher\additionfunctions.h
+1652379252 d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab12\prj\teacher\additionfunctions.h
 	<iostream>
 	<fstream>
 	<iomanip>
+
+1652379898 d:\pourtant important\learning\programming\striuk-vladyslav-ki-21-1\lab12\prj\teacher\modulesstriuk.h
+	<string>
+	<cstring>
+	<sstream>
+	<regex>
 

@@ -1,4 +1,3 @@
-#include "ModulesStriuk.h"
 #include "AdditionFunctions.h"
 
 using namespace std;
@@ -33,15 +32,9 @@ int main()
         pipe.setPipeRadius(pipeRadius, bufFloat);
         bufLine = to_string(pipe.getPipeSquare());
 
-        resultFile << "----------------------------------------------------" << endl;
-        resultFile << "| TEST CASE " << setw(2) << i << setw(38) << "|" << endl;
-        resultFile << "| (input)    Pipe height: " << setw(20) << pipe.getPipeHeight() << " м   |" << endl;
-        resultFile << "| (input)    Pipe radius: " << setw(20) << pipe.getPipeRadius() << " м   |" << endl;
-        resultFile << "| (output)   Pipe square: " << setw(20) << bufLine << " м^2 |" << endl;
-        resultFile << "| (expected) Pipe square: " << setw(20) << pipeSquare << " м^2 |" << endl;
-        resultFile << "| TEST CASE RESULT:       " << setw(20) << boolalpha << (pipeSquare.compare(bufLine) == 0) << "     |" << endl;
-        resultFile << "----------------------------------------------------" << endl;
+        declareTestSuiteResults(resultFile, pipe, bufLine, pipeSquare, i);
     }
+
     caseFile.close();
     resultFile.close();
     system("pause");
